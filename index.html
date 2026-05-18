@@ -3,325 +3,621 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Josue Gomez - Senior Backend Developer</title>
+    <title>Josué Esaud Gómez González | Backend &amp; Cloud Infrastructure Engineer</title>
+    <meta
+      name="description"
+      content="Professional CV for Josué Esaud Gómez González, Backend & Cloud Infrastructure Engineer in Zapopan, Jalisco, Mexico, focused on backend development, cloud infrastructure, and enterprise support."
+    />
+    <meta name="author" content="Josué Esaud Gómez González" />
+    <meta
+      name="keywords"
+      content="Josué Esaud Gómez González, Senior Backend Developer, Senior Infra Engineer, backend development, cloud infrastructure, AWS, Python, JavaScript, Go, C#, Java, PostgreSQL, Django, Spring Boot, ASP.NET, Express, Zapopan, Jalisco, Mexico"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Performance hints for external resources used by this static page. -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+    <!-- Add the canonical URL here after publishing to a final public domain. -->
+    <!-- No favicon asset exists in this static project yet. Add one later when a favicon file is available. -->
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Josué Esaud Gómez González Portfolio" />
+    <meta
+      property="og:title"
+      content="Josué Esaud Gómez González | Backend &amp; Cloud Infrastructure Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Professional portfolio and CV focused on backend development, cloud infrastructure, enterprise support, and automation."
+    />
+    <!-- Add og:url after publishing the site to a stable public URL. -->
+    <!-- Social preview images currently use the local profile image. Use absolute image URLs after deployment if required by the target platform. -->
+    <meta
+      property="og:image"
+      content="assets/profile.jpeg"
+    />
+    <meta property="og:image:alt" content="Josué Esaud Gómez González profile photo" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Josué Esaud Gómez González | Backend &amp; Cloud Infrastructure Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Backend development, cloud infrastructure, enterprise support, and automation portfolio based in Zapopan, Jalisco, Mexico."
+    />
+    <meta
+      name="twitter:image"
+      content="assets/profile.jpeg"
+    />
+    <meta name="twitter:image:alt" content="Josué Esaud Gómez González profile photo" />
+
+    <!-- External UI resources. Kept on CDN to preserve the static, no-build setup. -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+
+    <!-- Small custom layer for page-level polish, focus states, and dark-mode background. -->
     <style>
-      @layer utilities {
-        .shadow-soft {
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                      0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        .dark .shadow-soft-dark {
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
-                      0 2px 4px -1px rgba(0, 0, 0, 0.2);
-        }
-        .section-icon {
-          width: 40px;
-          height: 40px;
+      :root {
+        color-scheme: light;
+      }
+
+      :root.dark {
+        color-scheme: dark;
+      }
+
+      body {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background:
+          linear-gradient(180deg, rgba(240, 253, 250, 0.72) 0%, rgba(248, 250, 252, 1) 360px),
+          #f8fafc;
+      }
+
+      .dark body {
+        background:
+          linear-gradient(180deg, rgba(15, 23, 42, 1) 0%, rgba(2, 6, 23, 1) 380px),
+          #020617;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        border-radius: 0.5rem;
+        outline: 3px solid #0f766e;
+        outline-offset: 3px;
+      }
+
+      .dark a:focus-visible,
+      .dark button:focus-visible {
+        outline-color: #5eead4;
+      }
+
+      .section-card {
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
+        transition:
+          border-color 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .section-card:hover {
+        border-color: rgba(15, 118, 110, 0.26);
+        box-shadow: 0 22px 52px rgba(15, 23, 42, 0.1);
+      }
+
+      .dark .section-card {
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+      }
+
+      .dark .section-card:hover {
+        border-color: rgba(94, 234, 212, 0.22);
+        box-shadow: 0 22px 52px rgba(0, 0, 0, 0.42);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          transition-delay: 0ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
         }
       }
     </style>
   </head>
-  <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-    <!-- Header Section -->
-    <header class="container mx-auto px-4 py-8">
-      <div class="flex flex-col md:flex-row items-center gap-8">
-        <div class="w-48 h-48">
-          <img
-            src="https://media.licdn.com/dms/image/C4D03AQESstcuko7jMA/profile-displayphoto-shrink_200_200/0/1663884373147?e=2147483647&amp;v=beta&amp;t=-fhNmB2L3QCOk-XevL_Kh1B6RuPLw4Rf5u7_eNFUtM0"
-            alt="Josué Gómez profile photo"
-            class="rounded-full shadow-lg border-4 border-white dark:border-gray-800 w-full h-full object-cover"
-          />
-        </div>
-        <div class="flex-1 text-center md:text-left">
-          <h1 class="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-2">
-            Josué Esaud Gómez González
-          </h1>
-          <h2 class="text-2xl text-gray-600 dark:text-gray-300 mb-6">
-            Senior Backend Developer
-          </h2>
+  <body class="text-slate-700 transition-colors duration-300 dark:text-slate-300">
+    <!-- Accessibility: keyboard users can jump past navigation directly to content. -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-slate-950 focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-white dark:focus:bg-white dark:focus:text-slate-950"
+    >
+      Skip to main content
+    </a>
 
-          <!-- Two-row layout for contacts -->
-          <div class="flex flex-col gap-2">
-            <!-- First row -->
-            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-              <a
-                href="tel:+523321380874"
-                class="flex items-center px-6 py-3 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors"
-              >
-                <i class="bi bi-telephone-fill mr-2"></i>Call
-              </a>
+    <div class="min-h-screen">
+      <!-- Header / Navigation -->
+      <header class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 shadow-sm shadow-slate-900/5 backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/80 dark:shadow-black/20">
+        <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
+          <a
+            href="#top"
+            class="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-900 dark:text-white"
+            aria-label="Go to top of Josué Esaud Gómez González portfolio"
+          >
+            <span class="h-2.5 w-2.5 rounded-full bg-teal-600 dark:bg-teal-300" aria-hidden="true"></span>
+            Josué Gómez
+          </a>
+          <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300 md:flex" aria-label="Primary navigation">
+            <a href="#experience" class="hover:text-teal-700 dark:hover:text-teal-300">Experience</a>
+            <a href="#skills" class="hover:text-teal-700 dark:hover:text-teal-300">Skills</a>
+            <a href="#education" class="hover:text-teal-700 dark:hover:text-teal-300">Education</a>
+            <a href="#contact" class="hover:text-teal-700 dark:hover:text-teal-300">Contact</a>
+          </nav>
+          <button
+            id="themeToggle"
+            type="button"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-teal-700 hover:text-teal-700 hover:shadow-md dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-300"
+            aria-label="Toggle dark mode"
+          >
+            <i id="themeIcon" class="bi bi-moon-stars" aria-hidden="true"></i>
+          </button>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <!-- Hero -->
+        <section id="top" class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 md:grid-cols-[240px_1fr] md:py-20" aria-labelledby="profile-heading">
+          <div class="mx-auto h-52 w-52 overflow-hidden rounded-2xl border border-white/80 bg-slate-200 shadow-2xl shadow-teal-900/10 ring-1 ring-slate-900/5 dark:border-slate-800 dark:bg-slate-800 dark:shadow-black/40 dark:ring-white/10 md:mx-0 md:h-56 md:w-56">
+            <img
+              src="assets/profile.jpeg"
+              alt="Josué Esaud Gómez González profile photo"
+              width="400"
+              height="400"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+              class="h-full w-full object-cover"
+            />
+          </div>
+
+          <div class="text-center md:text-left">
+            <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-teal-100 bg-white/80 px-3 py-1 text-sm font-semibold text-teal-700 shadow-sm dark:border-teal-900/60 dark:bg-teal-950/70 dark:text-teal-200">
+              <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+              Zapopan, Jalisco, Mexico
+            </p>
+            <h1 id="profile-heading" class="text-4xl font-extrabold leading-tight tracking-tight text-slate-950 dark:text-white md:text-6xl">
+              Josué Esaud Gómez González
+            </h1>
+            <p class="mt-4 text-xl font-semibold text-teal-800 dark:text-teal-200 md:text-2xl">
+              Backend &amp; Cloud Infrastructure Engineer
+            </p>
+            <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+              Backend and infrastructure professional with 5+ years of experience in web applications, IT operations, cloud-oriented environments, and technical support. Strong general knowledge across programming languages and a practical focus on reliable systems, automation, troubleshooting, and continuous learning.
+            </p>
+
+            <!-- Contact -->
+            <nav id="contact" class="mt-8 flex flex-wrap justify-center gap-3 md:justify-start" aria-label="Contact links">
               <a
                 href="mailto:esaud@hotmail.es"
-                class="flex items-center px-6 py-3 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors"
+                class="inline-flex items-center gap-2 rounded-lg bg-slate-950 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-teal-800 hover:shadow-xl dark:bg-white dark:text-slate-950 dark:shadow-black/30 dark:hover:bg-teal-100"
+                aria-label="Send email to Josué Esaud Gómez González"
               >
-                <i class="bi bi-envelope-at-fill mr-2"></i>Email
+                <i class="bi bi-envelope-at-fill" aria-hidden="true"></i>
+                Email
               </a>
               <a
-                href="https://drive.google.com/drive/folders/1YwnIzEDvr6CcGWLk0XiVJ188honRPQJV?usp=sharing"
-                class="flex items-center px-6 py-3 bg-red-600 dark:bg-red-700 text-white rounded-lg hover:bg-red-700 dark:hover:bg-red-600 transition-colors"
+                href="tel:+523321380874"
+                class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-700 hover:text-teal-700 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-100 dark:hover:border-teal-300 dark:hover:text-teal-300"
+                aria-label="Call Josué Esaud Gómez González"
               >
-                <i class="bi bi-file-earmark-text-fill mr-2"></i>PDF
+                <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                Call
               </a>
-            </div>
-            <!-- Second row -->
-            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
               <a
-                href="https://wa.me/+523321380874"
-                class="flex items-center px-6 py-3 bg-green-600 dark:bg-green-700 text-white rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-colors"
+                href="https://wa.me/523321380874"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-green-600 hover:text-green-700 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-100 dark:hover:border-green-400 dark:hover:text-green-300"
+                aria-label="Open WhatsApp chat with Josué Esaud Gómez González in a new tab"
               >
-                <i class="bi bi-whatsapp"></i>
+                <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                WhatsApp
               </a>
               <a
                 href="https://github.com/yorologo?tab=repositories"
-                class="flex items-center px-6 py-3 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-900 hover:text-slate-950 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-100 dark:hover:border-white"
+                aria-label="Open Josué Esaud Gómez González GitHub repositories in a new tab"
               >
-                <i class="bi bi-github"></i>
+                <i class="bi bi-github" aria-hidden="true"></i>
+                GitHub
               </a>
               <a
                 href="https://www.linkedin.com/in/josu%C3%A9-esaud-g%C3%B3mez-gonz%C3%A1lez-85bb54135/"
-                class="flex items-center px-6 py-3 bg-blue-600 dark:bg-blue-700 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-600 hover:text-blue-700 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-100 dark:hover:border-blue-400 dark:hover:text-blue-300"
+                aria-label="Open Josué Esaud Gómez González LinkedIn profile in a new tab"
               >
-                <i class="bi bi-linkedin"></i>
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+                LinkedIn
               </a>
+              <a
+                href="https://drive.google.com/drive/folders/1YwnIzEDvr6CcGWLk0XiVJ188honRPQJV?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-red-600 hover:text-red-700 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-100 dark:hover:border-red-400 dark:hover:text-red-300"
+                aria-label="Open Josué Esaud Gómez González PDF CV folder in a new tab"
+              >
+                <i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i>
+                PDF
+              </a>
+            </nav>
+          </div>
+        </section>
+
+        <!-- Mobile Quick Links -->
+        <nav class="mx-auto -mt-6 grid w-full max-w-md grid-cols-2 gap-3 px-5 pb-10 sm:max-w-2xl sm:grid-cols-4 md:hidden" aria-label="Quick links">
+          <a href="#experience" class="inline-flex items-center justify-center whitespace-nowrap rounded-lg border border-slate-200 bg-white/90 px-3 py-2 text-center text-sm font-semibold text-slate-700 shadow-sm dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-200">Experience</a>
+          <a href="#skills" class="inline-flex items-center justify-center whitespace-nowrap rounded-lg border border-slate-200 bg-white/90 px-3 py-2 text-center text-sm font-semibold text-slate-700 shadow-sm dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-200">Skills</a>
+          <a href="#education" class="inline-flex items-center justify-center whitespace-nowrap rounded-lg border border-slate-200 bg-white/90 px-3 py-2 text-center text-sm font-semibold text-slate-700 shadow-sm dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-200">Education</a>
+          <a href="#contact" class="inline-flex items-center justify-center whitespace-nowrap rounded-lg border border-slate-200 bg-white/90 px-3 py-2 text-center text-sm font-semibold text-slate-700 shadow-sm dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-200">Contact</a>
+        </nav>
+
+        <!-- Professional Summary -->
+        <section class="mx-auto grid max-w-6xl gap-4 px-5 pb-10 md:grid-cols-4" aria-label="Professional summary">
+          <div class="rounded-lg border border-slate-200 bg-white/90 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/90 dark:hover:border-teal-900">
+            <p class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Experience</p>
+            <p class="mt-2 text-2xl font-bold text-slate-950 dark:text-white">5+ years</p>
+          </div>
+          <div class="rounded-lg border border-slate-200 bg-white/90 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/90 dark:hover:border-teal-900">
+            <p class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Current Company</p>
+            <p class="mt-2 text-2xl font-bold text-slate-950 dark:text-white">Mphasis</p>
+          </div>
+          <div class="rounded-lg border border-slate-200 bg-white/90 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/90 dark:hover:border-teal-900">
+            <p class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Age</p>
+            <p class="mt-2 text-2xl font-bold text-slate-950 dark:text-white"><span id="agePlaceholder"></span></p>
+          </div>
+          <div class="rounded-lg border border-slate-200 bg-white/90 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/90 dark:hover:border-teal-900">
+            <p class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Languages</p>
+            <p class="mt-2 text-2xl font-bold text-slate-950 dark:text-white">ES / EN</p>
+          </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="mx-auto grid max-w-6xl gap-8 px-5 py-8 lg:grid-cols-[minmax(0,1fr)_360px]">
+          <div class="space-y-8">
+            <!-- About -->
+            <section class="section-card rounded-xl border border-slate-200/80 bg-white/95 p-7 dark:border-slate-800 dark:bg-slate-900/95" aria-labelledby="about-heading">
+              <div class="mb-5 flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-teal-50 text-teal-700 dark:bg-teal-950 dark:text-teal-200">
+                  <i class="bi bi-person-circle text-xl" aria-hidden="true"></i>
+                </span>
+                <h2 id="about-heading" class="text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white">About</h2>
+              </div>
+              <p class="max-w-4xl text-[1.02rem] leading-8 text-slate-600 dark:text-slate-300">
+                I work across backend development, infrastructure, cloud-oriented environments, and senior technical support. My experience includes maintaining web applications, supporting enterprise operations, automating repetitive workflows, and troubleshooting systems where reliability and clear communication matter. I bring a practical engineering mindset: understand the problem, improve the process, and build solutions that are maintainable for the teams that use them.
+              </p>
+            </section>
+
+            <!-- Experience -->
+            <section id="experience" class="section-card rounded-xl border border-slate-200/80 bg-white/95 p-7 dark:border-slate-800 dark:bg-slate-900/95" aria-labelledby="experience-heading">
+              <div class="mb-6 flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-200">
+                  <i class="bi bi-briefcase-fill text-xl" aria-hidden="true"></i>
+                </span>
+                <h2 id="experience-heading" class="text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white">Experience</h2>
+              </div>
+
+              <div class="space-y-5">
+                <article class="rounded-lg border border-teal-100 bg-teal-50/45 p-5 shadow-sm dark:border-teal-900/50 dark:bg-teal-950/20">
+                  <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                    <div>
+                      <h3 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Senior Infra Engineer</h3>
+                      <p class="mt-1 font-semibold text-teal-800 dark:text-teal-200">Mphasis</p>
+                    </div>
+                    <p class="rounded-full bg-teal-50 px-3 py-1 text-sm font-semibold text-teal-700 dark:bg-teal-950 dark:text-teal-200">Sep 2022 - Present</p>
+                  </div>
+                  <ul class="mt-4 space-y-2 leading-7 text-slate-600 dark:text-slate-300">
+                    <li class="flex gap-2">
+                      <i class="bi bi-check2-circle mt-1 text-teal-700 dark:text-teal-300" aria-hidden="true"></i>
+                      <span>Develop and maintain web applications and infrastructure components for operational environments.</span>
+                    </li>
+                    <li class="flex gap-2">
+                      <i class="bi bi-check2-circle mt-1 text-teal-700 dark:text-teal-300" aria-hidden="true"></i>
+                      <span>Automated large dataset comparison with a Python and Anaconda-based script to support validation and review workflows.</span>
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="rounded-lg border border-slate-200 bg-white/70 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950/30">
+                  <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                    <div>
+                      <h3 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Field Tech Senior Representative</h3>
+                      <p class="mt-1 font-semibold text-slate-600 dark:text-slate-300">NTT Data</p>
+                    </div>
+                    <p class="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">Feb 2022 - Jul 2022</p>
+                  </div>
+                  <ul class="mt-4 space-y-2 leading-7 text-slate-600 dark:text-slate-300">
+                    <li class="flex gap-2">
+                      <i class="bi bi-check2-circle mt-1 text-teal-700 dark:text-teal-300" aria-hidden="true"></i>
+                      <span>Built a JavaScript Markdown rendering tool to automate note copying and simplify internal documentation workflows.</span>
+                    </li>
+                    <li class="flex gap-2">
+                      <i class="bi bi-check2-circle mt-1 text-teal-700 dark:text-teal-300" aria-hidden="true"></i>
+                      <span>Supported senior field technology operations and IT infrastructure activities for manufacturing-sector clients.</span>
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="rounded-lg border border-slate-200 bg-white/70 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950/30">
+                  <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                    <div>
+                      <h3 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Field Service Engineer</h3>
+                      <p class="mt-1 font-semibold text-slate-600 dark:text-slate-300">Grupo PISSA</p>
+                    </div>
+                    <p class="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">Jun 2021 - Feb 2022</p>
+                  </div>
+                  <ul class="mt-4 space-y-2 leading-7 text-slate-600 dark:text-slate-300">
+                    <li class="flex gap-2">
+                      <i class="bi bi-check2-circle mt-1 text-teal-700 dark:text-teal-300" aria-hidden="true"></i>
+                      <span>Inspected, installed, and supported equipment and technology deployments in field service environments.</span>
+                    </li>
+                    <li class="flex gap-2">
+                      <i class="bi bi-check2-circle mt-1 text-teal-700 dark:text-teal-300" aria-hidden="true"></i>
+                      <span>Resolved IT infrastructure issues through on-site technical support.</span>
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="rounded-lg border border-slate-200 bg-white/70 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950/30">
+                  <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                    <div>
+                      <h3 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Field Service Engineer</h3>
+                      <p class="mt-1 font-semibold text-slate-600 dark:text-slate-300">University of Guadalajara · Temporary contract</p>
+                    </div>
+                    <p class="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">Sep 2020 - Dec 2020</p>
+                  </div>
+                  <ul class="mt-4 space-y-2 leading-7 text-slate-600 dark:text-slate-300">
+                    <li class="flex gap-2">
+                      <i class="bi bi-check2-circle mt-1 text-teal-700 dark:text-teal-300" aria-hidden="true"></i>
+                      <span>Supported hardware, software, and server maintenance activities in an institutional technology environment.</span>
+                    </li>
+                    <li class="flex gap-2">
+                      <i class="bi bi-check2-circle mt-1 text-teal-700 dark:text-teal-300" aria-hidden="true"></i>
+                      <span>Developed a Java application to classify, edit, encrypt, and organize thesis documents.</span>
+                    </li>
+                  </ul>
+                </article>
+              </div>
+            </section>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="space-y-8 lg:sticky lg:top-24 lg:self-start">
+            <!-- Skills -->
+            <section id="skills" class="section-card rounded-xl border border-slate-200/80 bg-white/95 p-6 dark:border-slate-800 dark:bg-slate-900/95" aria-labelledby="skills-heading">
+              <div class="mb-5 flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-200">
+                  <i class="bi bi-tools text-xl" aria-hidden="true"></i>
+                </span>
+                <h2 id="skills-heading" class="text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white">Skills</h2>
+              </div>
+
+              <div class="space-y-5">
+                <div>
+                  <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Languages</h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100">Python</span>
+                    <span class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100">JavaScript</span>
+                    <span class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100">Go</span>
+                    <span class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100">C#</span>
+                    <span class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100">Java</span>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Technologies</h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="rounded-lg border border-teal-100 bg-teal-50 px-3 py-1.5 text-sm font-semibold text-teal-800 dark:border-teal-900/70 dark:bg-teal-950 dark:text-teal-200">AWS</span>
+                    <span class="rounded-lg border border-teal-100 bg-teal-50 px-3 py-1.5 text-sm font-semibold text-teal-800 dark:border-teal-900/70 dark:bg-teal-950 dark:text-teal-200">PostgreSQL</span>
+                    <span class="rounded-lg border border-teal-100 bg-teal-50 px-3 py-1.5 text-sm font-semibold text-teal-800 dark:border-teal-900/70 dark:bg-teal-950 dark:text-teal-200">Django</span>
+                    <span class="rounded-lg border border-teal-100 bg-teal-50 px-3 py-1.5 text-sm font-semibold text-teal-800 dark:border-teal-900/70 dark:bg-teal-950 dark:text-teal-200">Spring Boot</span>
+                    <span class="rounded-lg border border-teal-100 bg-teal-50 px-3 py-1.5 text-sm font-semibold text-teal-800 dark:border-teal-900/70 dark:bg-teal-950 dark:text-teal-200">ASP.NET</span>
+                    <span class="rounded-lg border border-teal-100 bg-teal-50 px-3 py-1.5 text-sm font-semibold text-teal-800 dark:border-teal-900/70 dark:bg-teal-950 dark:text-teal-200">Express</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Education -->
+            <section id="education" class="section-card rounded-xl border border-slate-200/80 bg-white/95 p-6 dark:border-slate-800 dark:bg-slate-900/95" aria-labelledby="education-heading">
+              <div class="mb-5 flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-violet-50 text-violet-700 dark:bg-violet-950 dark:text-violet-200">
+                  <i class="bi bi-mortarboard-fill text-xl" aria-hidden="true"></i>
+                </span>
+                <h2 id="education-heading" class="text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white">Education</h2>
+              </div>
+              <h3 class="text-lg font-extrabold leading-snug tracking-tight text-slate-900 dark:text-white">
+                Instituto Tecnológico Superior Mario Molina Pasquel y Henríquez campus Zapopan
+              </h3>
+              <p class="mt-2 text-slate-600 dark:text-slate-300">B.S. in Computer Systems Engineering</p>
+              <p class="mt-4 inline-flex rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">2016 - 2020</p>
+              <p class="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Activities: Programming workshop lead.
+              </p>
+            </section>
+
+            <!-- Languages -->
+            <section class="section-card rounded-xl border border-slate-200/80 bg-white/95 p-6 dark:border-slate-800 dark:bg-slate-900/95" aria-labelledby="languages-heading">
+              <div class="mb-5 flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-rose-50 text-rose-700 dark:bg-rose-950 dark:text-rose-200">
+                  <i class="bi bi-translate text-xl" aria-hidden="true"></i>
+                </span>
+                <h2 id="languages-heading" class="text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white">Languages</h2>
+              </div>
+              <div class="space-y-3">
+                <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/40">
+                  <p class="font-bold text-slate-900 dark:text-white">Spanish</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-300">Native or bilingual proficiency</p>
+                </div>
+                <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/40">
+                  <p class="font-bold text-slate-900 dark:text-white">English</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-300">Basic professional proficiency</p>
+                </div>
+              </div>
+            </section>
+          </aside>
+        </div>
+
+        <!-- Licenses & Certifications -->
+        <section class="mx-auto max-w-6xl px-5 pb-16" aria-labelledby="certifications-heading">
+          <div class="section-card rounded-xl border border-slate-200/80 bg-white/95 p-7 dark:border-slate-800 dark:bg-slate-900/95">
+            <div class="mb-6 flex items-center gap-3">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-200">
+                <i class="bi bi-patch-check-fill text-xl" aria-hidden="true"></i>
+              </span>
+              <h2 id="certifications-heading" class="text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white">Licenses & Certifications</h2>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-2">
+              <article class="rounded-lg border border-slate-200 bg-slate-50/80 p-4 transition hover:border-teal-200 hover:bg-white hover:shadow-sm dark:border-slate-800 dark:bg-slate-950/30 dark:hover:border-teal-900 dark:hover:bg-slate-950/50">
+                <h3 class="font-bold text-slate-900 dark:text-white">CSS Fundamentals course</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">SoloLearn · Issued Oct 2018</p>
+                <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Credential ID 1023-1803380</p>
+              </article>
+              <article class="rounded-lg border border-slate-200 bg-slate-50/80 p-4 transition hover:border-teal-200 hover:bg-white hover:shadow-sm dark:border-slate-800 dark:bg-slate-950/30 dark:hover:border-teal-900 dark:hover:bg-slate-950/50">
+                <h3 class="font-bold text-slate-900 dark:text-white">JavaScript Tutorial course</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">SoloLearn · Issued Jun 2018</p>
+                <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Credential ID 1024-1803380</p>
+              </article>
+              <article class="rounded-lg border border-slate-200 bg-slate-50/80 p-4 transition hover:border-teal-200 hover:bg-white hover:shadow-sm dark:border-slate-800 dark:bg-slate-950/30 dark:hover:border-teal-900 dark:hover:bg-slate-950/50">
+                <h3 class="font-bold text-slate-900 dark:text-white">Python 3 Tutorial</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">SoloLearn · Issued Jun 2018</p>
+                <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Credential ID 1073-1803380</p>
+              </article>
+              <article class="rounded-lg border border-slate-200 bg-slate-50/80 p-4 transition hover:border-teal-200 hover:bg-white hover:shadow-sm dark:border-slate-800 dark:bg-slate-950/30 dark:hover:border-teal-900 dark:hover:bg-slate-950/50">
+                <h3 class="font-bold text-slate-900 dark:text-white">SQL Fundamentals course</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">SoloLearn · Issued Jan 2018</p>
+                <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Credential ID 1060-1803380</p>
+              </article>
+              <article class="rounded-lg border border-slate-200 bg-slate-50/80 p-4 transition hover:border-teal-200 hover:bg-white hover:shadow-sm dark:border-slate-800 dark:bg-slate-950/30 dark:hover:border-teal-900 dark:hover:bg-slate-950/50">
+                <h3 class="font-bold text-slate-900 dark:text-white">HTML Fundamentals course</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">SoloLearn · Issued Sep 2017</p>
+                <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Credential ID 1014-1803380</p>
+              </article>
+              <article class="rounded-lg border border-slate-200 bg-slate-50/80 p-4 transition hover:border-teal-200 hover:bg-white hover:shadow-sm dark:border-slate-800 dark:bg-slate-950/30 dark:hover:border-teal-900 dark:hover:bg-slate-950/50">
+                <h3 class="font-bold text-slate-900 dark:text-white">C# Tutorial Course</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">SoloLearn · Issued Jun 2017</p>
+                <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Credential ID 1080-1803380</p>
+              </article>
+              <article class="rounded-lg border border-slate-200 bg-slate-50/80 p-4 transition hover:border-teal-200 hover:bg-white hover:shadow-sm dark:border-slate-800 dark:bg-slate-950/30 dark:hover:border-teal-900 dark:hover:bg-slate-950/50">
+                <h3 class="font-bold text-slate-900 dark:text-white">C++ Tutorial Course</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">SoloLearn · Issued May 2017</p>
+                <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Credential ID 1051-1803380</p>
+              </article>
+              <article class="rounded-lg border border-slate-200 bg-slate-50/80 p-4 transition hover:border-teal-200 hover:bg-white hover:shadow-sm dark:border-slate-800 dark:bg-slate-950/30 dark:hover:border-teal-900 dark:hover:bg-slate-950/50">
+                <h3 class="font-bold text-slate-900 dark:text-white">Java Tutorial Course</h3>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">SoloLearn · Issued May 2017</p>
+                <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Credential ID 1068-1803380</p>
+              </article>
             </div>
           </div>
-          <!-- End of two-row layout -->
-        </div>
-      </div>
-    </header>
+        </section>
+      </main>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-6">
-      <!-- About Me Section -->
-      <section class="bg-white dark:bg-gray-800 rounded-xl shadow-soft dark:shadow-soft-dark p-6 mb-8 transition-colors duration-300">
-        <div class="flex items-center mb-6">
-          <i class="bi bi-person-circle text-blue-600 dark:text-blue-400 text-2xl mr-3 section-icon"></i>
-          <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-100">
-            About Me
-          </h2>
-        </div>
-        <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
-          5+ years building scalable systems for high-demand environments.
-          Specialized in robust architectures and cloud solutions, focused on
-          driving efficiency and technical innovation. Committed to projects
-          that generate social impact, excelling in collaborative leadership
-          and critical problem-solving under agile methodologies.
-        </p>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="space-y-2">
-            <p class="text-gray-600 dark:text-gray-300">
-              <span class="font-semibold">Age:</span>
-              <span id="agePlaceholder"></span>
-            </p>
-            <p class="text-gray-600 dark:text-gray-300">
-              <span class="font-semibold">Location:</span> Zapopan, Jalisco
-            </p>
-          </div>
-          <div class="space-y-2">
-            <p class="text-gray-600 dark:text-gray-300">
-              <span class="font-semibold">Degree:</span> Computer Systems Engineering
-            </p>
-            <p class="text-gray-600 dark:text-gray-300">
-              <span class="font-semibold">Experience:</span> 5+ years
-            </p>
-          </div>
-        </div>
-      </section>
+      <!-- Footer -->
+      <footer class="border-t border-slate-200/80 bg-white/60 px-5 py-7 text-center text-sm text-slate-600 backdrop-blur dark:border-slate-800 dark:bg-slate-950/60 dark:text-slate-400">
+        <p>© <span id="currentYear"></span> Josué Esaud Gómez González. Personal CV and portfolio.</p>
+      </footer>
+    </div>
 
-      <!-- Experience Section (Ordered from Most Recent to Oldest) -->
-      <section class="bg-white dark:bg-gray-800 rounded-xl shadow-soft dark:shadow-soft-dark p-6 mb-8 transition-colors duration-300">
-        <div class="flex items-center mb-6">
-          <i class="bi bi-briefcase text-blue-600 dark:text-blue-400 text-2xl mr-3 section-icon"></i>
-          <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-100">
-            Experience
-          </h2>
-        </div>
-        <!-- Mphasis - Most Recent -->
-        <div class="mb-6">
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-            <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200">
-              Mphasis - Splz Senior Infra Engineer
-            </h3>
-            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-3 py-1 rounded-full text-sm mt-2 md:mt-0">
-              2022 Sep – Present
-            </span>
-          </div>
-          <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-            <li class="flex items-start">
-              <i class="bi bi-dot mr-2 text-blue-600 dark:text-blue-400"></i>
-              Develop and maintain web applications and cloud infrastructure serving over 50k daily users.
-            </li>
-            <li class="flex items-start">
-              <i class="bi bi-dot mr-2 text-blue-600 dark:text-blue-400"></i>
-              Created a Python (Anaconda) script for comparing large datasets.
-            </li>
-          </ul>
-        </div>
-        <!-- NTT Data -->
-        <div class="mb-6">
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-            <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200">
-              NTT Data - Field Tech Senior Representative
-            </h3>
-            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-3 py-1 rounded-full text-sm mt-2 md:mt-0">
-              2022 Feb – 2022 Jul
-            </span>
-          </div>
-          <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-            <li class="flex items-start">
-              <i class="bi bi-dot mr-2 text-blue-600 dark:text-blue-400"></i>
-              Developed a JavaScript Markdown rendering system that automated note copying, boosting team productivity.
-            </li>
-            <li class="flex items-start">
-              <i class="bi bi-dot mr-2 text-blue-600 dark:text-blue-400"></i>
-              Managed IT infrastructure for manufacturing sector clients.
-            </li>
-          </ul>
-        </div>
-        <!-- University of Guadalajara -->
-        <div class="mb-6">
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-            <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200">
-              University of Guadalajara - Technician in Maintenance and Repair
-            </h3>
-            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-3 py-1 rounded-full text-sm mt-2 md:mt-0">
-              2020 Sep – 2020 Dec
-            </span>
-          </div>
-          <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-            <li class="flex items-start">
-              <i class="bi bi-dot mr-2 text-blue-600 dark:text-blue-400"></i>
-              Assisted in hardware and software maintenance of servers.
-            </li>
-            <li class="flex items-start">
-              <i class="bi bi-dot mr-2 text-blue-600 dark:text-blue-400"></i>
-              Developed a Java program to classify, edit, encrypt, and organize theses.
-            </li>
-          </ul>
-        </div>
-        <!-- PISSA Group - Oldest -->
-        <div class="mb-6">
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-            <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200">
-              PISSA Group - Field Service Engineer
-            </h3>
-            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-3 py-1 rounded-full text-sm mt-2 md:mt-0">
-              2020 Jun – 2020 Dec
-            </span>
-          </div>
-          <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-            <li class="flex items-start">
-              <i class="bi bi-dot mr-2 text-blue-600 dark:text-blue-400"></i>
-              Inspected and installed equipment and new technologies, coordinating on-site teams.
-            </li>
-            <li class="flex items-start">
-              <i class="bi bi-dot mr-2 text-blue-600 dark:text-blue-400"></i>
-              Resolved IT infrastructure issues for Bimbo’s distribution center.
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Technical Skills Section -->
-      <section class="bg-white dark:bg-gray-800 rounded-xl shadow-soft dark:shadow-soft-dark p-6 mb-8 transition-colors duration-300">
-        <div class="flex items-center mb-6">
-          <i class="bi bi-tools text-blue-600 dark:text-blue-400 text-2xl mr-3 section-icon"></i>
-          <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-100">
-            Technical Skills
-          </h2>
-        </div>
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- Languages -->
-          <div>
-            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">
-              Languages
-            </h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded-full">
-                Python
-              </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded-full">
-                JavaScript
-              </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded-full">
-                Go
-              </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded-full">
-                C#
-              </span>
-              <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded-full">
-                Java
-              </span>
-            </div>
-          </div>
-          <!-- Technologies & Frameworks -->
-          <div>
-            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">
-              Technologies & Frameworks
-            </h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-full">
-                AWS
-              </span>
-              <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-full">
-                PostgreSQL
-              </span>
-              <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-full">
-                Django
-              </span>
-              <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-full">
-                Spring Boot
-              </span>
-              <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-full">
-                ASP.NET
-              </span>
-              <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-full">
-                Express
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Education Section -->
-      <section class="bg-white dark:bg-gray-800 rounded-xl shadow-soft dark:shadow-soft-dark p-6 transition-colors duration-300">
-        <div class="flex items-center mb-6">
-          <i class="bi bi-mortarboard text-blue-600 dark:text-blue-400 text-2xl mr-3 section-icon"></i>
-          <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-100">
-            Education
-          </h2>
-        </div>
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-          <div>
-            <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200">
-              Higher Technological University of Jalisco
-            </h3>
-            <p class="text-gray-600 dark:text-gray-300">
-              B.S. in Computer Systems Engineering
-            </p>
-          </div>
-          <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-3 py-1 rounded-full text-sm mt-2 md:mt-0">
-            2016 - 2021
-          </span>
-        </div>
-      </section>
-    </main>
-
+    <!-- Page behavior: age, year, and light/dark theme. -->
     <script>
-      // Calculate age based on birth date 26/10/1997
-      const birthDate = new Date("1997-10-26");
+      // Date-derived content.
       const today = new Date();
-      let age = today.getFullYear() - birthDate.getFullYear();
-      const m = today.getMonth() - birthDate.getMonth();
-      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
+      const agePlaceholder = document.getElementById("agePlaceholder");
+      const currentYear = document.getElementById("currentYear");
+
+      function calculateAge(birthYear, birthMonth, birthDay, currentDate = new Date()) {
+        let age = currentDate.getFullYear() - birthYear;
+        const currentMonth = currentDate.getMonth() + 1;
+        const currentDay = currentDate.getDate();
+        const hasBirthdayPassed =
+          currentMonth > birthMonth || (currentMonth === birthMonth && currentDay >= birthDay);
+
+        return hasBirthdayPassed ? age : age - 1;
       }
-      document.getElementById('agePlaceholder').textContent = age;
+
+      if (agePlaceholder) {
+        agePlaceholder.textContent = calculateAge(1997, 10, 26, today);
+      }
+
+      if (currentYear) {
+        currentYear.textContent = today.getFullYear();
+      }
+
+      const root = document.documentElement;
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      // Theme storage is guarded because localStorage can be unavailable in restricted contexts.
+      function getSavedTheme() {
+        try {
+          return localStorage.getItem("theme");
+        } catch {
+          return null;
+        }
+      }
+
+      function saveTheme(theme) {
+        try {
+          localStorage.setItem("theme", theme);
+        } catch {
+          // Ignore storage errors in restricted browsing contexts.
+        }
+      }
+
+      // Theme UI.
+      function setTheme(isDark) {
+        root.classList.toggle("dark", isDark);
+
+        if (themeIcon) {
+          themeIcon.className = isDark ? "bi bi-sun" : "bi bi-moon-stars";
+        }
+
+        if (themeToggle) {
+          themeToggle.setAttribute(
+            "aria-label",
+            isDark ? "Switch to light mode" : "Switch to dark mode"
+          );
+        }
+
+        saveTheme(isDark ? "dark" : "light");
+      }
+
+      const savedTheme = getSavedTheme();
+      setTheme(savedTheme ? savedTheme === "dark" : prefersDark);
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          setTheme(!root.classList.contains("dark"));
+        });
+      }
     </script>
   </body>
 </html>
