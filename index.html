@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Josué Esaud Gómez González | Backend &amp; Cloud Infrastructure Engineer</title>
     <meta
@@ -15,12 +19,8 @@
     />
     <meta name="robots" content="index, follow" />
 
-    <!-- Performance hints for external resources used by this static page. -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-
-    <!-- Add the canonical URL here after publishing to a final public domain. -->
-    <!-- No favicon asset exists in this static project yet. Add one later when a favicon file is available. -->
+    <link rel="canonical" href="https://yorologo.com/" />
+    <link rel="icon" href="assets/profile.jpeg" type="image/jpeg" />
 
     <meta property="og:type" content="profile" />
     <meta property="og:locale" content="en_US" />
@@ -33,11 +33,10 @@
       property="og:description"
       content="Professional portfolio and CV focused on backend development, cloud infrastructure, enterprise support, and automation."
     />
-    <!-- Add og:url after publishing the site to a stable public URL. -->
-    <!-- Social preview images currently use the local profile image. Use absolute image URLs after deployment if required by the target platform. -->
+    <meta property="og:url" content="https://yorologo.com/" />
     <meta
       property="og:image"
-      content="assets/profile.jpeg"
+      content="https://yorologo.com/assets/profile.jpeg"
     />
     <meta property="og:image:alt" content="Josué Esaud Gómez González profile photo" />
 
@@ -52,91 +51,15 @@
     />
     <meta
       name="twitter:image"
-      content="assets/profile.jpeg"
+      content="https://yorologo.com/assets/profile.jpeg"
     />
     <meta name="twitter:image:alt" content="Josué Esaud Gómez González profile photo" />
 
-    <!-- External UI resources. Kept on CDN to preserve the static, no-build setup. -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-      };
-    </script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+    <!-- Local, pinned static assets. -->
+    <script src="assets/js/site.js"></script>
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" />
 
-    <!-- Small custom layer for page-level polish, focus states, and dark-mode background. -->
-    <style>
-      :root {
-        color-scheme: light;
-      }
-
-      :root.dark {
-        color-scheme: dark;
-      }
-
-      body {
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        background:
-          linear-gradient(180deg, rgba(240, 253, 250, 0.72) 0%, rgba(248, 250, 252, 1) 360px),
-          #f8fafc;
-      }
-
-      .dark body {
-        background:
-          linear-gradient(180deg, rgba(15, 23, 42, 1) 0%, rgba(2, 6, 23, 1) 380px),
-          #020617;
-      }
-
-      a:focus-visible,
-      button:focus-visible {
-        border-radius: 0.5rem;
-        outline: 3px solid #0f766e;
-        outline-offset: 3px;
-      }
-
-      .dark a:focus-visible,
-      .dark button:focus-visible {
-        outline-color: #5eead4;
-      }
-
-      .section-card {
-        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
-        transition:
-          border-color 180ms ease,
-          box-shadow 180ms ease;
-      }
-
-      .section-card:hover {
-        border-color: rgba(15, 118, 110, 0.26);
-        box-shadow: 0 22px 52px rgba(15, 23, 42, 0.1);
-      }
-
-      .dark .section-card {
-        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
-      }
-
-      .dark .section-card:hover {
-        border-color: rgba(94, 234, 212, 0.22);
-        box-shadow: 0 22px 52px rgba(0, 0, 0, 0.42);
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          scroll-behavior: auto !important;
-          transition-duration: 0.01ms !important;
-          transition-delay: 0ms !important;
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-        }
-      }
-    </style>
   </head>
   <body class="text-slate-700 transition-colors duration-300 dark:text-slate-300">
     <!-- Accessibility: keyboard users can jump past navigation directly to content. -->
@@ -178,7 +101,7 @@
 
       <main id="main-content">
         <!-- Hero -->
-        <section id="top" class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 md:grid-cols-[240px_1fr] md:py-20" aria-labelledby="profile-heading">
+        <section id="top" class="scroll-mt-24 mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 md:grid-cols-[240px_1fr] md:py-20" aria-labelledby="profile-heading">
           <div class="mx-auto h-52 w-52 overflow-hidden rounded-2xl border border-white/80 bg-slate-200 shadow-2xl shadow-teal-900/10 ring-1 ring-slate-900/5 dark:border-slate-800 dark:bg-slate-800 dark:shadow-black/40 dark:ring-white/10 md:mx-0 md:h-56 md:w-56">
             <img
               src="assets/profile.jpeg"
@@ -208,7 +131,7 @@
             </p>
 
             <!-- Contact -->
-            <nav id="contact" class="mt-8 flex flex-wrap justify-center gap-3 md:justify-start" aria-label="Contact links">
+            <nav id="contact" class="scroll-mt-24 mt-8 flex flex-wrap justify-center gap-3 md:justify-start" aria-label="Contact links">
               <a
                 href="mailto:esaud@hotmail.es"
                 class="inline-flex items-center gap-2 rounded-lg bg-slate-950 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-teal-800 hover:shadow-xl dark:bg-white dark:text-slate-950 dark:shadow-black/30 dark:hover:bg-teal-100"
@@ -260,10 +183,10 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white/90 px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-red-600 hover:text-red-700 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-100 dark:hover:border-red-400 dark:hover:text-red-300"
-                aria-label="Open Josué Esaud Gómez González PDF CV folder in a new tab"
+                aria-label="Open Josué Esaud Gómez González CV files folder in a new tab"
               >
                 <i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i>
-                PDF
+                CV files
               </a>
             </nav>
           </div>
@@ -278,7 +201,7 @@
         </nav>
 
         <!-- Professional Summary -->
-        <section class="mx-auto grid max-w-6xl gap-4 px-5 pb-10 md:grid-cols-4" aria-label="Professional summary">
+        <section class="mx-auto grid max-w-6xl gap-4 px-5 pb-10 md:grid-cols-3" aria-label="Professional summary">
           <div class="rounded-lg border border-slate-200 bg-white/90 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/90 dark:hover:border-teal-900">
             <p class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Experience</p>
             <p class="mt-2 text-2xl font-bold text-slate-950 dark:text-white">5+ years</p>
@@ -286,10 +209,6 @@
           <div class="rounded-lg border border-slate-200 bg-white/90 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/90 dark:hover:border-teal-900">
             <p class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Current Company</p>
             <p class="mt-2 text-2xl font-bold text-slate-950 dark:text-white">Mphasis</p>
-          </div>
-          <div class="rounded-lg border border-slate-200 bg-white/90 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/90 dark:hover:border-teal-900">
-            <p class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Age</p>
-            <p class="mt-2 text-2xl font-bold text-slate-950 dark:text-white"><span id="agePlaceholder"></span></p>
           </div>
           <div class="rounded-lg border border-slate-200 bg-white/90 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/90 dark:hover:border-teal-900">
             <p class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Languages</p>
@@ -314,7 +233,7 @@
             </section>
 
             <!-- Experience -->
-            <section id="experience" class="section-card rounded-xl border border-slate-200/80 bg-white/95 p-7 dark:border-slate-800 dark:bg-slate-900/95" aria-labelledby="experience-heading">
+            <section id="experience" class="scroll-mt-24 section-card rounded-xl border border-slate-200/80 bg-white/95 p-7 dark:border-slate-800 dark:bg-slate-900/95" aria-labelledby="experience-heading">
               <div class="mb-6 flex items-center gap-3">
                 <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-200">
                   <i class="bi bi-briefcase-fill text-xl" aria-hidden="true"></i>
@@ -409,7 +328,7 @@
           <!-- Sidebar -->
           <aside class="space-y-8 lg:sticky lg:top-24 lg:self-start">
             <!-- Skills -->
-            <section id="skills" class="section-card rounded-xl border border-slate-200/80 bg-white/95 p-6 dark:border-slate-800 dark:bg-slate-900/95" aria-labelledby="skills-heading">
+            <section id="skills" class="scroll-mt-24 section-card rounded-xl border border-slate-200/80 bg-white/95 p-6 dark:border-slate-800 dark:bg-slate-900/95" aria-labelledby="skills-heading">
               <div class="mb-5 flex items-center gap-3">
                 <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-200">
                   <i class="bi bi-tools text-xl" aria-hidden="true"></i>
@@ -444,7 +363,7 @@
             </section>
 
             <!-- Education -->
-            <section id="education" class="section-card rounded-xl border border-slate-200/80 bg-white/95 p-6 dark:border-slate-800 dark:bg-slate-900/95" aria-labelledby="education-heading">
+            <section id="education" class="scroll-mt-24 section-card rounded-xl border border-slate-200/80 bg-white/95 p-6 dark:border-slate-800 dark:bg-slate-900/95" aria-labelledby="education-heading">
               <div class="mb-5 flex items-center gap-3">
                 <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-violet-50 text-violet-700 dark:bg-violet-950 dark:text-violet-200">
                   <i class="bi bi-mortarboard-fill text-xl" aria-hidden="true"></i>
@@ -545,79 +464,5 @@
       </footer>
     </div>
 
-    <!-- Page behavior: age, year, and light/dark theme. -->
-    <script>
-      // Date-derived content.
-      const today = new Date();
-      const agePlaceholder = document.getElementById("agePlaceholder");
-      const currentYear = document.getElementById("currentYear");
-
-      function calculateAge(birthYear, birthMonth, birthDay, currentDate = new Date()) {
-        let age = currentDate.getFullYear() - birthYear;
-        const currentMonth = currentDate.getMonth() + 1;
-        const currentDay = currentDate.getDate();
-        const hasBirthdayPassed =
-          currentMonth > birthMonth || (currentMonth === birthMonth && currentDay >= birthDay);
-
-        return hasBirthdayPassed ? age : age - 1;
-      }
-
-      if (agePlaceholder) {
-        agePlaceholder.textContent = calculateAge(1997, 10, 26, today);
-      }
-
-      if (currentYear) {
-        currentYear.textContent = today.getFullYear();
-      }
-
-      const root = document.documentElement;
-      const themeToggle = document.getElementById("themeToggle");
-      const themeIcon = document.getElementById("themeIcon");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-      // Theme storage is guarded because localStorage can be unavailable in restricted contexts.
-      function getSavedTheme() {
-        try {
-          return localStorage.getItem("theme");
-        } catch {
-          return null;
-        }
-      }
-
-      function saveTheme(theme) {
-        try {
-          localStorage.setItem("theme", theme);
-        } catch {
-          // Ignore storage errors in restricted browsing contexts.
-        }
-      }
-
-      // Theme UI.
-      function setTheme(isDark) {
-        root.classList.toggle("dark", isDark);
-
-        if (themeIcon) {
-          themeIcon.className = isDark ? "bi bi-sun" : "bi bi-moon-stars";
-        }
-
-        if (themeToggle) {
-          themeToggle.setAttribute(
-            "aria-label",
-            isDark ? "Switch to light mode" : "Switch to dark mode"
-          );
-        }
-
-        saveTheme(isDark ? "dark" : "light");
-      }
-
-      const savedTheme = getSavedTheme();
-      setTheme(savedTheme ? savedTheme === "dark" : prefersDark);
-
-      if (themeToggle) {
-        themeToggle.addEventListener("click", () => {
-          setTheme(!root.classList.contains("dark"));
-        });
-      }
-    </script>
   </body>
 </html>

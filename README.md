@@ -1,147 +1,109 @@
 # Personal CV Portfolio
 
-Static personal CV/portfolio website for **Josué Esaud Gómez González**.
+Static professional CV/portfolio for **Josué Esaud Gómez González**, published at **https://yorologo.com/** with GitHub Pages.
 
-This project is a simple, maintainable, single-page professional profile focused on backend development, infrastructure, cloud-oriented work, technical support, education, skills, certifications, and contact links.
+## Architecture
 
-## Features
-
-- Responsive single-page CV/portfolio layout.
-- Professional hero section with profile photo, title, location, and contact actions.
-- Experience section ordered from most recent to oldest.
-- Skills grouped by languages and technologies.
-- Education, languages, and certifications sections.
-- Light/dark mode toggle with preference stored in `localStorage`.
-- Dynamic age calculation based on the birth date.
-- Dynamic footer year.
-- Basic SEO metadata.
-- Open Graph and Twitter Card metadata for social previews.
-- Accessibility improvements such as semantic landmarks, descriptive alt text, accessible labels, focus styles, and a skip link.
-
-## Technologies Used
+The project intentionally stays small and static:
 
 - HTML5
-- Tailwind CSS via CDN
-- Bootstrap Icons via CDN
-- Vanilla JavaScript
+- Tailwind CSS 3.4.17 compiled to a committed local stylesheet
+- Bootstrap Icons 1.11.3 vendored locally
+- Vanilla JavaScript for theme behavior and the footer year
+- GitHub Pages publishing the repository root from `main` without Jekyll processing
+- `CNAME` mapping the Pages site to `yorologo.com`
 
-No frontend framework, package manager, bundler, backend, or build system is required.
+There is no backend, database, frontend framework, runtime package installation, or deployment build step.
 
-## Project Structure
+## Repository structure
 
 ```text
 .
+|-- .github/
+|   `-- workflows/
+|       `-- validate.yml
 |-- assets/
+|   |-- css/
+|   |   |-- tailwind-input.css
+|   |   `-- site.css
+|   |-- js/
+|   |   `-- site.js
+|   |-- vendor/
+|   |   `-- bootstrap-icons/
+|   |       |-- fonts/
+|   |       |-- bootstrap-icons.min.css
+|   |       `-- LICENSE
 |   `-- profile.jpeg
+|-- .nojekyll
+|-- CNAME
 |-- index.html
-`-- README.md
+|-- README.md
+`-- tailwind.config.js
 ```
 
-### `assets/profile.jpeg`
+## Local use
 
-Local profile photo used by the page and social preview metadata.
-
-### `index.html`
-
-Contains the full website:
-
-- HTML structure
-- Tailwind utility classes
-- SEO and social preview metadata
-- Inline styles for small custom visual/accessibility refinements
-- Inline JavaScript for age calculation, current year, and dark mode
-
-### `README.md`
-
-Project documentation.
-
-## Open Locally
-
-Because this is a static HTML project, you can open it directly in a browser.
-
-1. Clone or download the project.
-2. Open `index.html` with any modern browser.
-
-No installation step is required.
-
-You can also serve the folder with any static server if you prefer, but it is not necessary.
-
-## Deployment with GitHub Pages
-
-This project is ready to be published directly from the `main` branch because `index.html` is located at the repository root and no build step is required.
-
-1. Push the project to a GitHub repository.
-2. Open the repository on GitHub.
-3. Go to **Settings**.
-4. Open **Pages** from the left sidebar.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Select the `main` branch.
-7. Select the root folder `/`.
-8. Save the configuration.
-
-GitHub Pages will publish the static site and provide the final public URL. After publishing, update the canonical and `og:url` metadata comments in `index.html` with that real URL.
-
-## Other Deployment Options
-
-This project can also be deployed on any static hosting provider.
-
-### Netlify
-
-1. Create a new site in Netlify.
-2. Connect the Git repository or drag and drop the project folder.
-3. Use the project root as the publish directory.
-4. Leave build command empty.
-5. Deploy.
-
-No build command is needed because the site is static.
-
-### Vercel
-
-1. Import the repository into Vercel.
-2. Keep the project as a static site.
-3. Leave build command empty.
-4. Use the project root as the output/publish directory.
-5. Deploy.
-
-No framework preset or build step is required.
-
-## No Runtime Requirements
-
-This project does **not** require:
-
-- npm
-- Node.js
-- a backend server
-- a database
-- local dependencies
-- a build pipeline
-
-The external resources used by the page are loaded from CDNs:
-
-- Tailwind CSS
-- Bootstrap Icons
+Clone the repository and open `index.html` in a modern browser. The committed site is self-contained and does not require npm, Node.js, a local server, or network access for its UI assets.
 
 ## Maintenance
 
-Recommended maintenance tasks:
+Edit source content in `index.html`, custom styles in `assets/css/tailwind-input.css`, and behavior in `assets/js/site.js`.
 
-- Keep professional experience, skills, certifications, and education up to date.
-- Confirm that external links still work:
-  - email
-  - phone
-  - WhatsApp
-  - GitHub
-  - LinkedIn
-  - PDF/CV link
-- Update the canonical URL and Open Graph URL after deploying to a stable domain.
-- Add a local favicon when one is available.
-- Review SEO description and social preview metadata when the professional focus changes.
-- Test the page in both light and dark mode after visual changes.
-- Check the layout on mobile and desktop after content updates.
-- Keep accessibility labels meaningful when adding or changing links and buttons.
+When HTML classes or custom CSS change, regenerate the committed stylesheet from the repository root:
+
+```powershell
+npx --yes tailwindcss@3.4.17 -c tailwind.config.js -i ./assets/css/tailwind-input.css -o ./assets/css/site.css --minify
+```
+
+Validate the HTML with the same upstream checker used by CI:
+
+```powershell
+npx --yes --package=vnu-jar@26.8.30 vnu --errors-only index.html
+```
+
+Also run:
+
+```powershell
+git diff --check
+git status --short
+```
+
+Do not edit `assets/css/site.css` by hand; it is generated from `tailwind-input.css` and the Tailwind classes present in `index.html`.
+
+## Git workflow
+
+- `develop` is the integration branch.
+- `main` is the stable branch published by GitHub Pages.
+- Work and validate on `develop` first.
+- Promote only validated changes to `main`.
+- Do not discard an unexpected dirty worktree. Inspect it before continuing.
+- Avoid concurrent writers on the same worktree. If parallel work is genuinely needed, use a separate Git worktree.
+
+The remote uses the existing SSH authentication on the MSI target; no project-specific token is required.
+
+## Validation workflow
+
+`.github/workflows/validate.yml` runs on pushes to `develop` and pull requests targeting `main`. It:
+
+1. validates `index.html` with the Nu Html Checker;
+2. rebuilds Tailwind CSS with the pinned 3.4.17 CLI;
+3. fails if the committed generated CSS does not match the source.
+
+The workflow has read-only repository contents permission and does not deploy the site.
+
+## Deployment
+
+GitHub Pages publishes the repository root from `main`. The empty `.nojekyll` file disables unnecessary Jekyll processing, and `CNAME` declares `yorologo.com` as the custom domain. No additional build pipeline is required for deployment.
+
+After publishing a change, verify the real public site over HTTPS rather than treating a successful push as deployment evidence.
+
+## Runtime security and privacy
+
+- Active CSS, JavaScript, icons, fonts, and the profile image are served locally from the Pages site.
+- A Content Security Policy limits runtime resources to the same origin.
+- External links opened in a new tab use `noopener noreferrer`.
+- The page does not embed the full date of birth merely to calculate age.
 
 ## License
 
-No license has been defined yet.
-
-If this project will be shared publicly, consider adding a license file such as `MIT`, `Apache-2.0`, or a custom all-rights-reserved notice depending on how the content and code should be reused.
+No project license has been defined. Add one only if there is a deliberate decision about reuse of the code and personal content.
