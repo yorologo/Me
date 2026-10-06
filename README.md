@@ -9,7 +9,7 @@ The project intentionally stays small and static:
 - HTML5
 - Tailwind CSS 3.4.17 compiled to a committed local stylesheet
 - Bootstrap Icons 1.11.3 vendored locally
-- Vanilla JavaScript for theme behavior and the footer year
+- Vanilla JavaScript for English/Spanish content, theme behavior, and the footer year
 - GitHub Pages publishing the repository root from `main` without Jekyll processing
 - `CNAME` mapping the Pages site to `yorologo.com`
 
@@ -47,7 +47,7 @@ Clone the repository and open `index.html` in a modern browser. The committed si
 
 ## Maintenance
 
-Edit source content in `index.html`, custom styles in `assets/css/tailwind-input.css`, and behavior in `assets/js/site.js`.
+Edit the English source content in `index.html`, Spanish translations and behavior in `assets/js/site.js`, and custom styles in `assets/css/tailwind-input.css`.
 
 When HTML classes or custom CSS change, regenerate the committed stylesheet from the repository root:
 
@@ -100,6 +100,7 @@ After publishing a change, verify the real public site over HTTPS rather than tr
 ## Runtime security and privacy
 
 - Active CSS, JavaScript, icons, fonts, and the profile image are served locally from the Pages site.
+- English and Spanish share one static page; the selected language is stored locally in the browser.
 - A Content Security Policy limits runtime resources to the same origin.
 - External links opened in a new tab use `noopener noreferrer`.
 - The page does not embed the full date of birth merely to calculate age.

@@ -88,14 +88,25 @@
             <a href="#education" class="hover:text-teal-700 dark:hover:text-teal-300">Education</a>
             <a href="#contact" class="hover:text-teal-700 dark:hover:text-teal-300">Contact</a>
           </nav>
-          <button
-            id="themeToggle"
-            type="button"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-teal-700 hover:text-teal-700 hover:shadow-md dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-300"
-            aria-label="Toggle dark mode"
-          >
-            <i id="themeIcon" class="bi bi-moon-stars" aria-hidden="true"></i>
-          </button>
+          <div class="flex items-center gap-2">
+            <button
+              id="languageToggle"
+              type="button"
+              class="inline-flex h-10 min-w-10 items-center justify-center gap-1.5 rounded-lg border border-slate-200 bg-white px-2.5 text-slate-700 shadow-sm transition hover:border-teal-700 hover:text-teal-700 hover:shadow-md dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-300"
+              aria-label="Switch to Spanish"
+            >
+              <i class="bi bi-translate" aria-hidden="true"></i>
+              <span id="languageLabel" class="text-xs font-extrabold tracking-wide">ES</span>
+            </button>
+            <button
+              id="themeToggle"
+              type="button"
+              class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-teal-700 hover:text-teal-700 hover:shadow-md dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-300"
+              aria-label="Toggle dark mode"
+            >
+              <i id="themeIcon" class="bi bi-moon-stars" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
       </header>
 
@@ -338,7 +349,7 @@
 
               <div class="space-y-5">
                 <div>
-                  <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Languages</h3>
+                  <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Programming Languages</h3>
                   <div class="flex flex-wrap gap-2">
                     <span class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100">Python</span>
                     <span class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100">JavaScript</span>
