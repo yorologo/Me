@@ -24,6 +24,9 @@ jobs:
       - name: Validate HTML
         run: npx --yes --package=vnu-jar@26.8.30 vnu --errors-only index.html
 
+      - name: Test navigation, languages and theme
+        run: node --test tests/site.test.mjs
+
       - name: Rebuild Tailwind CSS
         run: npx --yes tailwindcss@3.4.17 -c tailwind.config.js -i ./assets/css/tailwind-input.css -o ./assets/css/site.generated.css --minify
 

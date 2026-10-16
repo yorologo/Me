@@ -1,92 +1,304 @@
 (() => {
   const root = document.documentElement;
 
-  const textPairs = [
-    ["Skip to main content", "Saltar al contenido principal"],
-    ["Experience", "Experiencia"],
-    ["Skills", "Habilidades"],
-    ["Education", "Educación"],
-    ["Contact", "Contacto"],
-    ["Zapopan, Jalisco, Mexico", "Zapopan, Jalisco, México"],
-    ["Backend & Cloud Infrastructure Engineer", "Ingeniero de Backend e Infraestructura en la Nube"],
-    ["Backend and infrastructure professional with 5+ years of experience in web applications, IT operations, cloud-oriented environments, and technical support. Strong general knowledge across programming languages and a practical focus on reliable systems, automation, troubleshooting, and continuous learning.", "Profesional de backend e infraestructura con más de 5 años de experiencia en aplicaciones web, operaciones de TI, entornos orientados a la nube y soporte técnico. Conocimientos sólidos en diversos lenguajes de programación y un enfoque práctico en sistemas confiables, automatización, resolución de problemas y aprendizaje continuo."],
-    ["Email", "Correo"],
-    ["Call", "Llamar"],
-    ["CV files", "Archivos CV"],
-    ["5+ years", "5+ años"],
-    ["Current Company", "Empresa actual"],
-    ["Languages", "Idiomas"],
-    ["About", "Sobre mí"],
-    ["I work across backend development, infrastructure, cloud-oriented environments, and senior technical support. My experience includes maintaining web applications, supporting enterprise operations, automating repetitive workflows, and troubleshooting systems where reliability and clear communication matter. I bring a practical engineering mindset: understand the problem, improve the process, and build solutions that are maintainable for the teams that use them.", "Trabajo en desarrollo backend, infraestructura, entornos orientados a la nube y soporte técnico senior. Mi experiencia incluye mantenimiento de aplicaciones web, soporte a operaciones empresariales, automatización de flujos repetitivos y resolución de problemas en sistemas donde la confiabilidad y la comunicación clara son importantes. Aplico un enfoque práctico de ingeniería: entender el problema, mejorar el proceso y construir soluciones mantenibles para los equipos que las utilizan."],
-    ["Senior Infra Engineer", "Ingeniero Senior de Infraestructura"],
-    ["Sep 2022 - Present", "Sep 2022 - Actualidad"],
-    ["Develop and maintain web applications and infrastructure components for operational environments.", "Desarrollo y mantenimiento de aplicaciones web y componentes de infraestructura para entornos operativos."],
-    ["Automated large dataset comparison with a Python and Anaconda-based script to support validation and review workflows.", "Automaticé la comparación de grandes conjuntos de datos mediante un script basado en Python y Anaconda para apoyar flujos de validación y revisión."],
-    ["Field Tech Senior Representative", "Representante Senior de Tecnología en Campo"],
-    ["Built a JavaScript Markdown rendering tool to automate note copying and simplify internal documentation workflows.", "Desarrollé una herramienta de renderizado Markdown en JavaScript para automatizar la copia de notas y simplificar flujos internos de documentación."],
-    ["Supported senior field technology operations and IT infrastructure activities for manufacturing-sector clients.", "Brindé soporte a operaciones senior de tecnología en campo y actividades de infraestructura de TI para clientes del sector manufacturero."],
-    ["Field Service Engineer", "Ingeniero de Servicio en Campo"],
-    ["Inspected, installed, and supported equipment and technology deployments in field service environments.", "Inspeccioné, instalé y di soporte a equipos y despliegues tecnológicos en entornos de servicio en campo."],
-    ["Resolved IT infrastructure issues through on-site technical support.", "Resolví incidencias de infraestructura de TI mediante soporte técnico en sitio."],
-    ["University of Guadalajara · Temporary contract", "Universidad de Guadalajara · Contrato temporal"],
-    ["Sep 2020 - Dec 2020", "Sep 2020 - Dic 2020"],
-    ["Supported hardware, software, and server maintenance activities in an institutional technology environment.", "Apoyé actividades de mantenimiento de hardware, software y servidores en un entorno tecnológico institucional."],
-    ["Developed a Java application to classify, edit, encrypt, and organize thesis documents.", "Desarrollé una aplicación en Java para clasificar, editar, cifrar y organizar documentos de tesis."],
-    ["Programming Languages", "Lenguajes de programación"],
-    ["Technologies", "Tecnologías"],
-    ["B.S. in Computer Systems Engineering", "Ingeniería en Sistemas Computacionales"],
-    ["Activities: Programming workshop lead.", "Actividades: líder de taller de programación."],
-    ["Spanish", "Español"],
-    ["English", "Inglés"],
-    ["Native or bilingual proficiency", "Competencia nativa o bilingüe"],
-    ["Basic professional proficiency", "Competencia profesional básica"],
-    ["Featured Projects", "Proyectos destacados"],
-    ["Secure MCP gateway for controlled delegation to authorized remote systems.", "Gateway MCP seguro para delegar operaciones controladas a sistemas remotos autorizados."],
-    ["Local-first price intelligence engine for tracking and comparing delivery-platform prices.", "Motor local-first de inteligencia de precios para rastrear y comparar precios entre plataformas de entrega."],
-    ["Python tooling for GameCube metadata scanning, cheat resolution, and validated GCT generation.", "Herramientas en Python para escaneo de metadatos de GameCube, resolución de cheats y generación validada de archivos GCT."],
-    ["View on GitHub", "Ver en GitHub"],
-    ["Personal CV and portfolio.", "CV y portafolio personal."]
-  ];
-
-  const metadata = {
-    en: {
-      title: "Josué Esaud Gómez González | Backend & Cloud Infrastructure Engineer",
-      description: "Professional CV for Josué Esaud Gómez González, Backend & Cloud Infrastructure Engineer in Zapopan, Jalisco, Mexico, focused on backend development, cloud infrastructure, and enterprise support.",
-      socialDescription: "Professional portfolio and CV focused on backend development, cloud infrastructure, enterprise support, and automation.",
-      twitterDescription: "Backend development, cloud infrastructure, enterprise support, and automation portfolio based in Zapopan, Jalisco, Mexico.",
-      imageAlt: "Josué Esaud Gómez González profile photo",
-      locale: "en_US"
+  // Stable translation identifiers, independent of visible English text.
+  const messages = {
+    "copy-skip-to-main-content": {
+      "en": "Skip to main content",
+      "es": "Saltar al contenido principal"
     },
-    es: {
-      title: "Josué Esaud Gómez González | Ingeniero de Backend e Infraestructura en la Nube",
-      description: "CV profesional de Josué Esaud Gómez González, ingeniero de backend e infraestructura en la nube en Zapopan, Jalisco, México, enfocado en desarrollo backend, infraestructura cloud y soporte empresarial.",
-      socialDescription: "Portafolio profesional y CV enfocado en desarrollo backend, infraestructura cloud, soporte empresarial y automatización.",
-      twitterDescription: "Portafolio de desarrollo backend, infraestructura cloud, soporte empresarial y automatización en Zapopan, Jalisco, México.",
-      imageAlt: "Foto de perfil de Josué Esaud Gómez González",
-      locale: "es_MX"
+    "copy-experience": {
+      "en": "Experience",
+      "es": "Experiencia"
+    },
+    "copy-skills": {
+      "en": "Skills",
+      "es": "Habilidades"
+    },
+    "copy-education": {
+      "en": "Education",
+      "es": "Educación"
+    },
+    "copy-contact": {
+      "en": "Contact",
+      "es": "Contacto"
+    },
+    "copy-zapopan-jalisco-mexico": {
+      "en": "Zapopan, Jalisco, Mexico",
+      "es": "Zapopan, Jalisco, México"
+    },
+    "copy-email": {
+      "en": "Email",
+      "es": "Correo"
+    },
+    "copy-call": {
+      "en": "Call",
+      "es": "Llamar"
+    },
+    "copy-cv-files": {
+      "en": "CV files",
+      "es": "Archivos CV"
+    },
+    "copy-languages": {
+      "en": "Languages",
+      "es": "Idiomas"
+    },
+    "copy-about": {
+      "en": "About",
+      "es": "Sobre mí"
+    },
+    "copy-senior-infra-engineer": {
+      "en": "Senior Infra Engineer",
+      "es": "Ingeniero Senior de Infraestructura"
+    },
+    "copy-sep-2022-present": {
+      "en": "Sep 2022 - Present",
+      "es": "Sep 2022 - Actualidad"
+    },
+    "copy-field-tech-senior-representative": {
+      "en": "Field Tech Senior Representative",
+      "es": "Representante Senior de Tecnología en Campo"
+    },
+    "copy-supported-senior-field-technology-operations-and-it-inf": {
+      "en": "Supported senior field technology operations and IT infrastructure activities for manufacturing-sector clients.",
+      "es": "Brindé soporte a operaciones senior de tecnología en campo y actividades de infraestructura de TI para clientes del sector manufacturero."
+    },
+    "copy-field-service-engineer": {
+      "en": "Field Service Engineer",
+      "es": "Ingeniero de Servicio en Campo"
+    },
+    "copy-inspected-installed-and-supported-equipment-and-technol": {
+      "en": "Inspected, installed, and supported equipment and technology deployments in field service environments.",
+      "es": "Inspeccioné, instalé y di soporte a equipos y despliegues tecnológicos en entornos de servicio en campo."
+    },
+    "copy-resolved-it-infrastructure-issues-through-on-site-techn": {
+      "en": "Resolved IT infrastructure issues through on-site technical support.",
+      "es": "Resolví incidencias de infraestructura de TI mediante soporte técnico en sitio."
+    },
+    "copy-university-of-guadalajara-temporary-contract": {
+      "en": "University of Guadalajara · Temporary contract",
+      "es": "Universidad de Guadalajara · Contrato temporal"
+    },
+    "copy-sep-2020-dec-2020": {
+      "en": "Sep 2020 - Dec 2020",
+      "es": "Sep 2020 - Dic 2020"
+    },
+    "copy-supported-hardware-software-and-server-maintenance-acti": {
+      "en": "Supported hardware, software, and server maintenance activities in an institutional technology environment.",
+      "es": "Apoyé actividades de mantenimiento de hardware, software y servidores en un entorno tecnológico institucional."
+    },
+    "copy-developed-a-java-application-to-classify-edit-encrypt-a": {
+      "en": "Developed a Java application to classify, edit, encrypt, and organize thesis documents.",
+      "es": "Desarrollé una aplicación en Java para clasificar, editar, cifrar y organizar documentos de tesis."
+    },
+    "copy-programming-languages": {
+      "en": "Programming Languages",
+      "es": "Lenguajes de programación"
+    },
+    "copy-technologies": {
+      "en": "Technologies",
+      "es": "Tecnologías"
+    },
+    "copy-b-s-in-computer-systems-engineering": {
+      "en": "B.S. in Computer Systems Engineering",
+      "es": "Ingeniería en Sistemas Computacionales"
+    },
+    "copy-activities-programming-workshop-lead": {
+      "en": "Activities: Programming workshop lead.",
+      "es": "Actividades: líder de taller de programación."
+    },
+    "copy-spanish": {
+      "en": "Spanish",
+      "es": "Español"
+    },
+    "copy-english": {
+      "en": "English",
+      "es": "Inglés"
+    },
+    "copy-native-or-bilingual-proficiency": {
+      "en": "Native or bilingual proficiency",
+      "es": "Competencia nativa o bilingüe"
+    },
+    "copy-basic-professional-proficiency": {
+      "en": "Basic professional proficiency",
+      "es": "Competencia profesional básica"
+    },
+    "copy-featured-projects": {
+      "en": "Featured Projects",
+      "es": "Proyectos destacados"
+    },
+    "copy-view-on-github": {
+      "en": "View on GitHub",
+      "es": "Ver en GitHub"
+    },
+    "navProjects": {
+      "en": "Projects",
+      "es": "Proyectos"
+    },
+    "heroRole": {
+      "en": "Backend Developer · Automation & Infrastructure",
+      "es": "Desarrollador backend · Automatización e infraestructura"
+    },
+    "heroLead": {
+      "en": "I build and maintain web applications, automate repetitive data and documentation work, and solve infrastructure problems in enterprise environments. Computer Systems Engineer with 5+ years across software development and IT operations.",
+      "es": "Desarrollo y mantengo aplicaciones web, automatizo tareas repetitivas de datos y documentación, y resuelvo problemas de infraestructura en entornos empresariales. Soy ingeniero en Sistemas Computacionales con más de 5 años de experiencia en desarrollo de software y operaciones de TI."
+    },
+    "aboutNew": {
+      "en": "I connect software development with real operational needs. My work ranges from web applications and Python data workflows to troubleshooting infrastructure and supporting technical teams. I focus on understandable solutions, practical validation, and maintenance that does not become another problem.",
+      "es": "Conecto el desarrollo de software con necesidades operativas reales. Mi trabajo abarca aplicaciones web y procesos de datos con Python, así como el diagnóstico de infraestructura y el apoyo a equipos técnicos. Priorizo soluciones comprensibles, validación práctica y mantenimiento sencillo."
+    },
+    "summaryBuild": {
+      "en": "What I build",
+      "es": "Lo que desarrollo"
+    },
+    "summaryWeb": {
+      "en": "Web applications",
+      "es": "Aplicaciones web"
+    },
+    "summaryImprove": {
+      "en": "How I improve",
+      "es": "Cómo optimizo"
+    },
+    "summaryAutomation": {
+      "en": "Automation & tooling",
+      "es": "Automatización y herramientas"
+    },
+    "summaryContribute": {
+      "en": "Where I contribute",
+      "es": "Dónde aporto valor"
+    },
+    "summaryOperations": {
+      "en": "Enterprise operations",
+      "es": "Operaciones empresariales"
+    },
+    "mphasisApps": {
+      "en": "Maintain web applications and infrastructure used in enterprise operations, prioritizing reliability and clear troubleshooting.",
+      "es": "Mantengo aplicaciones web e infraestructura utilizadas en operaciones empresariales, priorizando la confiabilidad y el diagnóstico claro."
+    },
+    "mphasisPython": {
+      "en": "Built Python-based tooling to compare large datasets and make validation and review workflows repeatable.",
+      "es": "Desarrollé herramientas en Python para comparar grandes conjuntos de datos y hacer repetibles los procesos de validación y revisión."
+    },
+    "nttMarkdown": {
+      "en": "Built a JavaScript tool to render Markdown and transfer technical notes into internal documentation workflows.",
+      "es": "Desarrollé una herramienta en JavaScript para renderizar Markdown e incorporar notas técnicas a los flujos internos de documentación."
+    },
+    "mcpProject": {
+      "en": "Gateway for managing authorized remote systems through scoped tools and verifiable operations.",
+      "es": "Gateway para administrar sistemas remotos autorizados mediante herramientas de alcance limitado y operaciones verificables."
+    },
+    "dealProject": {
+      "en": "Local-first tooling that collects and compares delivery-platform prices to support consistent review.",
+      "es": "Herramienta local-first que recopila y compara precios de plataformas de entrega para facilitar su revisión."
+    },
+    "cubeProject": {
+      "en": "Python utility for scanning GameCube metadata, resolving cheats, and generating validated GCT files.",
+      "es": "Utilidad en Python para analizar metadatos de GameCube, resolver trucos y generar archivos GCT validados."
+    },
+    "exploreWork": {
+      "en": "Explore projects",
+      "es": "Explorar proyectos"
+    },
+    "contactHeading": {
+      "en": "Let's work together",
+      "es": "Trabajemos juntos"
+    },
+    "contactLead": {
+      "en": "Interested in working together or discussing a role? Email me or explore my professional profiles.",
+      "es": "¿Te interesa colaborar o hablar de una oportunidad laboral? Escríbeme por correo o visita mis perfiles profesionales."
+    },
+    "footerText": {
+      "en": "CV and engineering portfolio.",
+      "es": "CV y portafolio de ingeniería."
+    },
+    "dateNtt": {
+      "en": "Feb 2022 - Jul 2022",
+      "es": "Feb 2022 - Jul 2022"
+    },
+    "datePissa": {
+      "en": "Jun 2021 - Feb 2022",
+      "es": "Jun 2021 - Feb 2022"
+    },
+    "aria-go-to-top-of-josue-esaud-gomez-gonzalez-portfolio": {
+      "en": "Go to top of Josué Esaud Gómez González portfolio",
+      "es": "Ir al inicio del portafolio de Josué Esaud Gómez González"
+    },
+    "aria-primary-navigation": {
+      "en": "Primary navigation",
+      "es": "Navegación principal"
+    },
+    "aria-contact-links": {
+      "en": "Contact links",
+      "es": "Enlaces de contacto"
+    },
+    "aria-send-email-to-josue-esaud-gomez-gonzalez": {
+      "en": "Send email to Josué Esaud Gómez González",
+      "es": "Enviar correo a Josué Esaud Gómez González"
+    },
+    "aria-call-josue-esaud-gomez-gonzalez": {
+      "en": "Call Josué Esaud Gómez González",
+      "es": "Llamar a Josué Esaud Gómez González"
+    },
+    "aria-open-whatsapp-chat-with-josue-esaud-gomez-gonzalez-in-a": {
+      "en": "Open WhatsApp chat with Josué Esaud Gómez González in a new tab",
+      "es": "Abrir chat de WhatsApp con Josué Esaud Gómez González en una pestaña nueva"
+    },
+    "aria-open-josue-esaud-gomez-gonzalez-github-repositories-in-": {
+      "en": "Open Josué Esaud Gómez González GitHub repositories in a new tab",
+      "es": "Abrir los repositorios de GitHub de Josué Esaud Gómez González en una pestaña nueva"
+    },
+    "aria-open-josue-esaud-gomez-gonzalez-linkedin-profile-in-a-n": {
+      "en": "Open Josué Esaud Gómez González LinkedIn profile in a new tab",
+      "es": "Abrir el perfil de LinkedIn de Josué Esaud Gómez González en una pestaña nueva"
+    },
+    "aria-quick-links": {
+      "en": "Quick links",
+      "es": "Enlaces rápidos"
+    },
+    "aria-professional-summary": {
+      "en": "Professional summary",
+      "es": "Resumen profesional"
+    },
+    "aria-open-mcp-pi-on-github-in-a-new-tab": {
+      "en": "Open MCP-Pi on GitHub in a new tab",
+      "es": "Abrir MCP-Pi en GitHub en una pestaña nueva"
+    },
+    "aria-open-dealhunter-on-github-in-a-new-tab": {
+      "en": "Open DealHunter on GitHub in a new tab",
+      "es": "Abrir DealHunter en GitHub en una pestaña nueva"
+    },
+    "aria-open-notyourcube-on-github-in-a-new-tab": {
+      "en": "Open NotYourCube on GitHub in a new tab",
+      "es": "Abrir NotYourCube en GitHub en una pestaña nueva"
+    },
+    "aria-primary-actions": {
+      "en": "Primary actions",
+      "es": "Acciones principales"
+    },
+    "alt-josue-esaud-gomez-gonzalez-profile-photo": {
+      "en": "Josué Esaud Gómez González profile photo",
+      "es": "Foto de perfil de Josué Esaud Gómez González"
     }
   };
 
-  const ariaPairs = [
-    ["Go to top of Josué Esaud Gómez González portfolio", "Ir al inicio del portafolio de Josué Esaud Gómez González"],
-    ["Primary navigation", "Navegación principal"],
-    ["Contact links", "Enlaces de contacto"],
-    ["Send email to Josué Esaud Gómez González", "Enviar correo a Josué Esaud Gómez González"],
-    ["Call Josué Esaud Gómez González", "Llamar a Josué Esaud Gómez González"],
-    ["Open WhatsApp chat with Josué Esaud Gómez González in a new tab", "Abrir chat de WhatsApp con Josué Esaud Gómez González en una pestaña nueva"],
-    ["Open Josué Esaud Gómez González GitHub repositories in a new tab", "Abrir los repositorios de GitHub de Josué Esaud Gómez González en una pestaña nueva"],
-    ["Open Josué Esaud Gómez González LinkedIn profile in a new tab", "Abrir el perfil de LinkedIn de Josué Esaud Gómez González en una pestaña nueva"],
-    ["Open Josué Esaud Gómez González CV files folder in a new tab", "Abrir la carpeta de archivos del CV de Josué Esaud Gómez González en una pestaña nueva"],
-    ["Quick links", "Enlaces rápidos"],
-    ["Professional summary", "Resumen profesional"],
-    ["Open MCP-Pi on GitHub in a new tab", "Abrir MCP-Pi en GitHub en una pestaña nueva"],
-    ["Open DealHunter on GitHub in a new tab", "Abrir DealHunter en GitHub en una pestaña nueva"],
-    ["Open NotYourCube on GitHub in a new tab", "Abrir NotYourCube en GitHub en una pestaña nueva"]
-  ];
-
-  const altPairs = [
-    ["Josué Esaud Gómez González profile photo", "Foto de perfil de Josué Esaud Gómez González"]
-  ];
+  const metadata = {
+    "en": {
+      "title": "Josué Esaud Gómez González | Backend Developer & Automation Engineer",
+      "description": "Backend developer and automation-focused Computer Systems Engineer in Zapopan, Mexico. Explore web applications, Python tooling, infrastructure, and selected engineering projects.",
+      "socialDescription": "Explore backend applications, engineering projects, automation, and enterprise infrastructure work.",
+      "twitterDescription": "Explore backend applications, Python automation, infrastructure, and professional projects from an engineer in Zapopan, Mexico.",
+      "imageAlt": "Josué Esaud Gómez González profile photo",
+      "locale": "en_US"
+    },
+    "es": {
+      "title": "Josué Esaud Gómez González | Desarrollo backend y automatización",
+      "description": "Ingeniero en Sistemas Computacionales y desarrollador backend en Zapopan, México. Conoce aplicaciones web, automatizaciones con Python, infraestructura y proyectos de ingeniería.",
+      "socialDescription": "Conoce mis aplicaciones backend, proyectos de ingeniería, automatización e infraestructura empresarial.",
+      "twitterDescription": "Aplicaciones backend, automatización con Python, infraestructura y proyectos profesionales de un ingeniero en Zapopan, México.",
+      "imageAlt": "Foto de perfil de Josué Esaud Gómez González",
+      "locale": "es_MX"
+    }
+  };
 
   function getPreference(key) {
     try {
@@ -104,56 +316,15 @@
     }
   }
 
-  function makePairLookup(pairs) {
-    const lookup = new Map();
-
-    for (const [en, es] of pairs) {
-      lookup.set(en, { en, es });
-      lookup.set(es, { en, es });
+  function translateContent(language) {
+    for (const element of document.querySelectorAll("[data-i18n]")) {
+      const entry = messages[element.getAttribute("data-i18n")];
+      if (entry) element.textContent = entry[language];
     }
-
-    return lookup;
-  }
-
-  const textLookup = makePairLookup(textPairs);
-  const ariaLookup = makePairLookup(ariaPairs);
-  const altLookup = makePairLookup(altPairs);
-
-  function translateTextNodes(language) {
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    let node;
-
-    while ((node = walker.nextNode())) {
-      const value = node.nodeValue;
-      const trimmed = value.trim();
-      const pair = textLookup.get(trimmed);
-
-      if (!pair) {
-        continue;
-      }
-
-      const start = value.indexOf(trimmed);
-      node.nodeValue =
-        value.slice(0, start) + pair[language] + value.slice(start + trimmed.length);
-    }
-  }
-
-  function translateAttributes(language) {
-    for (const element of document.querySelectorAll("[aria-label]")) {
-      const value = element.getAttribute("aria-label");
-      const pair = ariaLookup.get(value);
-
-      if (pair) {
-        element.setAttribute("aria-label", pair[language]);
-      }
-    }
-
-    for (const element of document.querySelectorAll("[alt]")) {
-      const value = element.getAttribute("alt");
-      const pair = altLookup.get(value);
-
-      if (pair) {
-        element.setAttribute("alt", pair[language]);
+    for (const [attribute, target] of [["data-i18n-aria", "aria-label"], ["data-i18n-alt", "alt"]]) {
+      for (const element of document.querySelectorAll("[" + attribute + "]")) {
+        const entry = messages[element.getAttribute(attribute)];
+        if (entry) element.setAttribute(target, entry[language]);
       }
     }
   }
@@ -216,8 +387,7 @@
     function renderLanguage(language) {
       currentLanguage = language;
       root.lang = language;
-      translateTextNodes(language);
-      translateAttributes(language);
+      translateContent(language);
 
       const meta = metadata[language];
       document.title = meta.title;

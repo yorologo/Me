@@ -34,6 +34,8 @@ There is no backend, database, frontend framework, runtime package installation,
 |   |       |-- bootstrap-icons.min.css
 |   |       `-- LICENSE
 |   `-- profile.jpeg
+|-- tests/
+|   `-- site.test.mjs
 |-- .nojekyll
 |-- CNAME
 |-- index.html
@@ -47,7 +49,7 @@ Clone the repository and open `index.html` in a modern browser. The committed si
 
 ## Maintenance
 
-Edit the English source content in `index.html`, Spanish translations and behavior in `assets/js/site.js`, and custom styles in `assets/css/tailwind-input.css`.
+Edit the English fallback content in `index.html` and keep the stable `data-i18n`, `data-i18n-aria`, and `data-i18n-alt` keys synchronized with both language values in `assets/js/site.js`. Edit custom styling in `assets/css/tailwind-input.css`; never change the generated `site.css` by hand.
 
 When HTML classes or custom CSS change, regenerate the committed stylesheet from the repository root:
 
@@ -61,9 +63,10 @@ Validate the HTML with the same upstream checker used by CI:
 npx --yes --package=vnu-jar@26.8.30 vnu --errors-only index.html
 ```
 
-Also run:
+Run the built-in behavior tests and check the Git diff:
 
 ```powershell
+node --test tests/site.test.mjs
 git diff --check
 git status --short
 ```
@@ -86,8 +89,10 @@ The remote uses the existing SSH authentication on the MSI target; no project-sp
 `.github/workflows/validate.yml` runs on pushes to `develop` and pull requests targeting `main`. It:
 
 1. validates `index.html` with the Nu Html Checker;
-2. rebuilds Tailwind CSS with the pinned 3.4.17 CLI;
-3. fails if the committed generated CSS does not match the source.
+2. runs the Node.js navigation, localization, theme, and link tests;
+3. rebuilds Tailwind CSS with the pinned 3.4.17 CLI;
+4. fails if the committed generated CSS does not match the source.
+
 
 The workflow has read-only repository contents permission and does not deploy the site.
 
