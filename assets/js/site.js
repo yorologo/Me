@@ -91,14 +91,6 @@
       "en": "Developed a Java application to classify, edit, encrypt, and organize thesis documents.",
       "es": "Desarrollé una aplicación en Java para clasificar, editar, cifrar y organizar documentos de tesis."
     },
-    "copy-programming-languages": {
-      "en": "Programming Languages",
-      "es": "Lenguajes de programación"
-    },
-    "copy-technologies": {
-      "en": "Technologies",
-      "es": "Tecnologías"
-    },
     "copy-b-s-in-computer-systems-engineering": {
       "en": "B.S. in Computer Systems Engineering",
       "es": "Ingeniería en Sistemas Computacionales"
@@ -184,16 +176,12 @@
       "es": "Desarrollé una herramienta en JavaScript para renderizar Markdown e incorporar notas técnicas a los flujos internos de documentación."
     },
     "mcpProject": {
-      "en": "Gateway for managing authorized remote systems through scoped tools and verifiable operations.",
-      "es": "Gateway para administrar sistemas remotos autorizados mediante herramientas de alcance limitado y operaciones verificables."
+      "en": "Go-based MCP gateway connecting AI tools with authorized systems through controlled permissions and auditable operations.",
+      "es": "Gateway MCP desarrollado en Go que conecta herramientas de IA con sistemas autorizados mediante permisos controlados y operaciones auditables."
     },
     "dealProject": {
       "en": "Local-first tooling that collects and compares delivery-platform prices to support consistent review.",
       "es": "Herramienta local-first que recopila y compara precios de plataformas de entrega para facilitar su revisión."
-    },
-    "cubeProject": {
-      "en": "Python utility for scanning GameCube metadata, resolving cheats, and generating validated GCT files.",
-      "es": "Utilidad en Python para analizar metadatos de GameCube, resolver trucos y generar archivos GCT validados."
     },
     "exploreWork": {
       "en": "Explore projects",
@@ -267,10 +255,6 @@
       "en": "Open DealHunter on GitHub in a new tab",
       "es": "Abrir DealHunter en GitHub en una pestaña nueva"
     },
-    "aria-open-notyourcube-on-github-in-a-new-tab": {
-      "en": "Open NotYourCube on GitHub in a new tab",
-      "es": "Abrir NotYourCube en GitHub en una pestaña nueva"
-    },
     "aria-primary-actions": {
       "en": "Primary actions",
       "es": "Acciones principales"
@@ -278,6 +262,54 @@
     "alt-josue-esaud-gomez-gonzalez-profile-photo": {
       "en": "Josué Esaud Gómez González profile photo",
       "es": "Foto de perfil de Josué Esaud Gómez González"
+    },
+    "skills-backend": {
+      "en": "Backend & APIs",
+      "es": "Backend y APIs"
+    },
+    "skills-ai": {
+      "en": "AI & automation",
+      "es": "IA y automatización"
+    },
+    "skills-infra": {
+      "en": "Systems & infrastructure",
+      "es": "Sistemas e infraestructura"
+    },
+    "skills-other": {
+      "en": "Additional technologies",
+      "es": "Tecnologías complementarias"
+    },
+    "skill-ai-assisted": {
+      "en": "AI-assisted development",
+      "es": "Desarrollo asistido por IA"
+    },
+    "skill-api-integration": {
+      "en": "API & tool integration",
+      "es": "Integración de APIs y herramientas"
+    },
+    "skill-workflow": {
+      "en": "Workflow automation",
+      "es": "Automatización de procesos"
+    },
+    "skill-server-maintenance": {
+      "en": "Server maintenance",
+      "es": "Mantenimiento de servidores"
+    },
+    "adfilterProject": {
+      "en": "Shell scripts that organize external blocklists for DNS and privacy tools, including a dry-run-first Pi-hole import workflow.",
+      "es": "Scripts Shell que organizan listas externas de filtrado para DNS y privacidad, con un flujo de importación a Pi-hole que primero permite simular los cambios."
+    },
+    "adfilterStatus": {
+      "en": "Ongoing project",
+      "es": "Proyecto en evolución"
+    },
+    "aria-open-adfilter-on-github-in-a-new-tab": {
+      "en": "Open AdFilter on GitHub in a new tab",
+      "es": "Abrir AdFilter en GitHub en una pestaña nueva"
+    },
+    "skill-rest-api": {
+      "en": "REST API development",
+      "es": "Desarrollo de APIs REST"
     }
   };
 

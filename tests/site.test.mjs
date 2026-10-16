@@ -125,3 +125,24 @@ test("saved preference overrides browser and other locales use English", () => {
   assert.ok(en.classes.has("dark"));
   assert.equal(loadSite("fr-FR").document.documentElement.lang, "en");
 });
+
+test("featured projects and skill areas match the selected portfolio", () => {
+  assert.match(html, /href="https:\/\/github\.com\/yorologo\/AdFilter"/);
+  assert.doesNotMatch(html, /NotYourCube/);
+  const es = loadSite("es-MX");
+  const translated = new Map(es.text.map((node) => [
+    node.getAttribute("data-i18n"), node.textContent,
+  ]));
+  assert.equal(translated.get("skills-backend"), "Backend y APIs");
+  assert.equal(translated.get("skill-rest-api"), "Desarrollo de APIs REST");
+  assert.match(translated.get("mcpProject"), /IA/);
+  assert.equal(translated.get("skills-ai"), "IA y automatización");
+  assert.equal(translated.get("skills-infra"), "Sistemas e infraestructura");
+  assert.equal(translated.get("skill-server-maintenance"), "Mantenimiento de servidores");
+  assert.equal(translated.get("adfilterStatus"), "Proyecto en evolución");
+  assert.match(translated.get("adfilterProject"), /Pi-hole/);
+  const accessible = new Map(es.aria.map((node) => [
+    node.getAttribute("data-i18n-aria"), node.getAttribute("aria-label"),
+  ]));
+  assert.match(accessible.get("aria-open-adfilter-on-github-in-a-new-tab"), /AdFilter/);
+});
