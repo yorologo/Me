@@ -134,6 +134,10 @@ test("featured projects and skill areas match the selected portfolio", () => {
     node.getAttribute("data-i18n"), node.textContent,
   ]));
   assert.equal(translated.get("skills-backend"), "Backend y APIs");
+  const backendSkills = html.split('data-i18n="skills-backend"')[1]?.split('data-i18n="skills-ai"')[0] ?? "";
+  assert.match(backendSkills, />SQL<\/span>/);
+  assert.match(backendSkills, />NoSQL<\/span>/);
+  assert.doesNotMatch(backendSkills, /PostgreSQL/);
   assert.equal(translated.get("skill-rest-api"), "Desarrollo de APIs REST");
   assert.match(translated.get("mcpProject"), /IA/);
   assert.equal(translated.get("skills-ai"), "IA y automatización");
