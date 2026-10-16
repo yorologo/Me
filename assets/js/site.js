@@ -35,10 +35,6 @@
       "en": "Call",
       "es": "Llamar"
     },
-    "copy-cv-files": {
-      "en": "CV files",
-      "es": "Archivos CV"
-    },
     "copy-languages": {
       "en": "Languages",
       "es": "Idiomas"
@@ -128,36 +124,12 @@
       "es": "Desarrollador backend · Automatización e infraestructura"
     },
     "heroLead": {
-      "en": "I build and maintain web applications, automate repetitive data and documentation work, and solve infrastructure problems in enterprise environments. Computer Systems Engineer with 5+ years across software development and IT operations.",
-      "es": "Desarrollo y mantengo aplicaciones web, automatizo tareas repetitivas de datos y documentación, y resuelvo problemas de infraestructura en entornos empresariales. Soy ingeniero en Sistemas Computacionales con más de 5 años de experiencia en desarrollo de software y operaciones de TI."
+      "en": "I develop web applications and automation tools and maintain the systems they depend on. My background combines software engineering with enterprise IT operations.",
+      "es": "Desarrollo aplicaciones web y herramientas de automatización, y mantengo los sistemas de los que dependen. Mi trayectoria combina ingeniería de software con operaciones de TI empresariales."
     },
     "aboutNew": {
-      "en": "I connect software development with real operational needs. My work ranges from web applications and Python data workflows to troubleshooting infrastructure and supporting technical teams. I focus on understandable solutions, practical validation, and maintenance that does not become another problem.",
-      "es": "Conecto el desarrollo de software con necesidades operativas reales. Mi trabajo abarca aplicaciones web y procesos de datos con Python, así como el diagnóstico de infraestructura y el apoyo a equipos técnicos. Priorizo soluciones comprensibles, validación práctica y mantenimiento sencillo."
-    },
-    "summaryBuild": {
-      "en": "What I build",
-      "es": "Lo que desarrollo"
-    },
-    "summaryWeb": {
-      "en": "Web applications",
-      "es": "Aplicaciones web"
-    },
-    "summaryImprove": {
-      "en": "How I improve",
-      "es": "Cómo optimizo"
-    },
-    "summaryAutomation": {
-      "en": "Automation & tooling",
-      "es": "Automatización y herramientas"
-    },
-    "summaryContribute": {
-      "en": "Where I contribute",
-      "es": "Dónde aporto valor"
-    },
-    "summaryOperations": {
-      "en": "Enterprise operations",
-      "es": "Operaciones empresariales"
+      "en": "I work across backend development and technical operations, from Python data workflows to maintaining Windows and Linux environments. I prefer simple, documented solutions with clear access controls and tests that show what actually works.",
+      "es": "Trabajo entre el desarrollo backend y las operaciones técnicas, desde procesos de datos con Python hasta el mantenimiento de entornos Windows y Linux. Prefiero soluciones sencillas y documentadas, con controles de acceso claros y pruebas que demuestren qué funciona."
     },
     "mphasisApps": {
       "en": "Maintain web applications and infrastructure used in enterprise operations, prioritizing reliability and clear troubleshooting.",
@@ -172,12 +144,12 @@
       "es": "Desarrollé una herramienta en JavaScript para renderizar Markdown e incorporar notas técnicas a los flujos internos de documentación."
     },
     "mcpProject": {
-      "en": "Go-based MCP gateway connecting AI tools with authorized systems through controlled permissions and auditable operations.",
-      "es": "Gateway MCP desarrollado en Go que conecta herramientas de IA con sistemas autorizados mediante permisos controlados y operaciones auditables."
+      "en": "Go gateway connecting AI tools to authorized systems through SSH, scoped permissions and auditable actions.",
+      "es": "Gateway en Go que conecta herramientas de IA con sistemas autorizados mediante SSH, permisos delimitados y operaciones auditables."
     },
     "dealProject": {
-      "en": "Local-first tooling that collects and compares delivery-platform prices to support consistent review.",
-      "es": "Herramienta local-first que recopila y compara precios de plataformas de entrega para facilitar su revisión."
+      "en": "Local-first price history and comparison tool for delivery platforms, with a local web interface and SQLite storage.",
+      "es": "Herramienta local-first de historial y comparación de precios de plataformas de entrega, con interfaz web local y almacenamiento SQLite."
     },
     "exploreWork": {
       "en": "Explore projects",
@@ -239,10 +211,6 @@
       "en": "Quick links",
       "es": "Enlaces rápidos"
     },
-    "aria-professional-summary": {
-      "en": "Professional summary",
-      "es": "Resumen profesional"
-    },
     "aria-open-mcp-pi-on-github-in-a-new-tab": {
       "en": "Open MCP-Pi on GitHub in a new tab",
       "es": "Abrir MCP-Pi en GitHub en una pestaña nueva"
@@ -292,8 +260,8 @@
       "es": "Mantenimiento de servidores"
     },
     "adfilterProject": {
-      "en": "Shell scripts that organize external blocklists for DNS and privacy tools, including a dry-run-first Pi-hole import workflow.",
-      "es": "Scripts Shell que organizan listas externas de filtrado para DNS y privacidad, con un flujo de importación a Pi-hole que primero permite simular los cambios."
+      "en": "Shell tools that index external DNS/privacy blocklists and offer a dry-run-first Pi-hole import workflow.",
+      "es": "Herramientas Shell que indexan listas externas de filtrado DNS y privacidad, con un flujo de importación a Pi-hole que permite simular primero."
     },
     "adfilterStatus": {
       "en": "Ongoing project",
@@ -338,6 +306,26 @@
     "sep-registry-aria": {
       "en": "Open the official SEP professional registry in a new tab",
       "es": "Abrir el registro profesional oficial de la SEP en otra pestaña"
+    },
+    "projectMcpProof": {
+      "en": "Go · SSH · SQLite · authorization policies",
+      "es": "Go · SSH · SQLite · políticas de autorización"
+    },
+    "projectDealProof": {
+      "en": "Python · SQLite · Flask · local web interface",
+      "es": "Python · SQLite · Flask · interfaz web local"
+    },
+    "projectAdProof": {
+      "en": "Shell · DNS lists · Pi-hole dry run",
+      "es": "Shell · listas DNS · simulación Pi-hole"
+    },
+    "skillsSeeWork": {
+      "en": "See these skills in selected projects",
+      "es": "Ver estas habilidades en proyectos"
+    },
+    "printCv": {
+      "en": "Print / Save CV",
+      "es": "Imprimir / Guardar CV"
     }
   };
 
@@ -418,6 +406,7 @@
     const languageToggle = document.getElementById("languageToggle");
     const languageLabel = document.getElementById("languageLabel");
     const currentYear = document.getElementById("currentYear");
+    const printCv = document.getElementById("printCv");
 
     if (currentYear) {
       currentYear.textContent = String(new Date().getFullYear());
@@ -475,6 +464,10 @@
     }
 
     renderLanguage(currentLanguage);
+
+    if (printCv) {
+      printCv.addEventListener("click", () => window.print());
+    }
 
     if (languageToggle) {
       languageToggle.addEventListener("click", () => {

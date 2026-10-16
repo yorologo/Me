@@ -5,6 +5,7 @@ import test from "node:test";
 
 const html = fs.readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const siteJs = fs.readFileSync(new URL("../assets/js/site.js", import.meta.url), "utf8");
+const customCss = fs.readFileSync(new URL("../assets/css/tailwind-input.css", import.meta.url), "utf8");
 const textKeys = [...html.matchAll(/data-i18n="([^"]+)"/g)].map((m) => m[1]);
 const ariaKeys = [...html.matchAll(/data-i18n-aria="([^"]+)"/g)].map((m) => m[1]);
 const altKeys = [...html.matchAll(/data-i18n-alt="([^"]+)"/g)].map((m) => m[1]);
@@ -27,7 +28,7 @@ function loadSite(language, preferences = {}) {
   const aria = ariaKeys.map((key) => element({ "data-i18n-aria": key }));
   const alt = altKeys.map((key) => element({ "data-i18n-alt": key }));
   const controls = Object.fromEntries(
-    ["themeToggle", "themeIcon", "languageToggle", "languageLabel", "currentYear"]
+    ["themeToggle", "themeIcon", "languageToggle", "languageLabel", "currentYear", "printCv"]
       .map((id) => [id, element()])
   );
   const meta = new Map();
@@ -43,6 +44,7 @@ function loadSite(language, preferences = {}) {
     },
   };
   let ready;
+  let printCalls = 0;
   const document = {
     documentElement: root,
     title: "",
@@ -67,13 +69,13 @@ function loadSite(language, preferences = {}) {
   };
   vm.runInNewContext(siteJs, {
     document,
-    window: { matchMedia: () => ({ matches: false }) },
+    window: { matchMedia: () => ({ matches: false }), print: () => { printCalls += 1; } },
     navigator: { language },
     localStorage,
   }, { filename: "site.js" });
   assert.equal(typeof ready, "function");
   ready();
-  return { document, text, aria, alt, controls, storage, classes };
+  return { document, text, aria, alt, controls, storage, classes, printCalls: () => printCalls };
 }
 
 test("anchors resolve to existing unique IDs", () => {
@@ -171,4 +173,43 @@ test("professional credentials use official registry links and omit source docum
     node.getAttribute("data-i18n-aria"), node.getAttribute("aria-label"),
   ]));
   assert.match(officialLink.get("sep-registry-aria"), /SEP/);
+});
+
+
+test("native CV print action works and is localized", () => {
+  assert.match(html, /id="printCv"/);
+  assert.doesNotMatch(html, /drive.google.com\/drive\/folders/);
+  const es = loadSite("es-MX");
+  const translations = new Map(es.text.map(n => [n.getAttribute("data-i18n"), n.textContent]));
+  assert.equal(translations.get("printCv"), "Imprimir / Guardar CV");
+  es.controls.printCv.click();
+  assert.equal(es.printCalls(), 1);
+  assert.match(html, /class="print-contact/);
+  assert.match(html, /href="mailto:/);
+});
+
+test("every translation key is used and has both nonempty languages", () => {
+  const match = siteJs.match(/const messages = ([\s\S]*?);\s*const metadata = /);
+  assert.ok(match, "Translation dictionary missing");
+  const translations = JSON.parse(match[1]);
+  const expected = new Set([...textKeys, ...ariaKeys, ...altKeys]);
+  assert.deepEqual(Object.keys(translations).sort(), [...expected].sort());
+  for (const [key, values] of Object.entries(translations)) {
+    for (const language of ["es", "en"]) {
+      assert.equal(typeof values[language], "string", key);
+      assert.ok(values[language].trim().length > 0, key + " (" + language + ")");
+    }
+  }
+});
+
+test("print CV keeps essential credentials and contact without duplicating documents", () => {
+  assert.match(customCss, /@media print/);
+  assert.match(customCss, /@page\s*\{/);
+  assert.match(customCss, /\.print-contact\s*\{\s*display:\s*block/);
+  assert.match(html, /class="print-contact[^"]*">[^<]+@[^<]+<\/p>/);
+  assert.match(html, /data-i18n="projectMcpProof"/);
+  assert.match(html, /data-i18n="projectDealProof"/);
+  assert.match(html, /data-i18n="projectAdProof"/);
+  assert.doesNotMatch(html, /data-i18n="summaryBuild"/);
+  assert.match(html, /href="https:\/\/cedulaprofesional\.sep\.gob\.mx\//);
 });

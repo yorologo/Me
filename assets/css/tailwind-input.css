@@ -61,3 +61,49 @@ h2 {
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* Use the live bilingual page as a print-friendly CV; no separate document to maintain. */
+.print-contact { display: none; }
+
+@media print {
+  @page { size: A4; margin: 12mm; }
+  :root, :root.dark { color-scheme: light; }
+  html { font-size: 9.5pt; }
+  body { background: #fff !important; color: #111827 !important; }
+  body *, body *::before, body *::after {
+    color: #111827 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  header, nav, footer, #top > div:first-child, #printCv { display: none !important; }
+  .print-contact { display: block !important; }
+  #top { display: block !important; padding: 0 0 7mm !important; }
+  #top > div:last-child { text-align: left !important; }
+  #top h1 { font-size: 22pt !important; line-height: 1.2 !important; }
+  #top p { margin-top: 2mm !important; line-height: 1.35 !important; }
+  main > section, main > div { padding: 0 !important; margin: 0 0 5mm !important; }
+  main > div { display: block !important; }
+  #projects > div, .section-card, #experience article, #projects article {
+    border-color: #d1d5db !important;
+    box-shadow: none !important;
+  }
+  #projects > div, .section-card { padding: 0 !important; border: none !important; }
+  #projects .grid { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 2mm !important; }
+  #projects article { padding: 2mm !important; margin: 0 !important; }
+  #experience article { padding: 2mm !important; margin-bottom: 2mm !important; }
+  #projects article, #experience article, #education > div, #skills > div {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+  main .space-y-8 > * + * { margin-top: 3mm !important; }
+  main .space-y-5 > * + * { margin-top: 2mm !important; }
+  main p, main li { line-height: 1.35 !important; }
+  main h2 { font-size: 14pt !important; margin-bottom: 2mm !important; }
+  main h3 { font-size: 10pt !important; }
+  h1, h2, h3 { break-after: avoid-page; }
+  #projects a, #education a, #skills a { text-decoration: underline !important; }
+  #projects a::after { content: " (" attr(href) ")"; font-size: 8pt; overflow-wrap: anywhere; }
+  .print-contact { font-weight: 600; margin-top: 1mm; }
+}

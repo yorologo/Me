@@ -47,6 +47,20 @@ There is no backend, database, frontend framework, runtime package installation,
 
 Clone the repository and open `index.html` in a modern browser. The committed site is self-contained and does not require npm, Node.js, a local server, or network access for its UI assets.
 
+## CV for recruiters
+
+The page is the single source of truth for the CV. Use **Print / Save CV**
+(**Imprimir / Guardar CV** in Spanish) to open the browser's native print dialog.
+Choose *Save as PDF* to create a document locally; the site does not upload or
+store that PDF. The print stylesheet hides navigation and actions, includes a
+plain-text contact email, and keeps projects, experience, skills and professional
+credentials.
+
+The printable portfolio may take several A4 pages. It is not a separately
+curated one-page application CV. No Google Drive folder or private SEP
+constancia PDFs are required for this flow. Visitors can check professional
+registration numbers independently on the SEP's official website.
+
 ## Maintenance
 
 Edit the English fallback content in `index.html` and keep the stable `data-i18n`, `data-i18n-aria`, and `data-i18n-alt` keys synchronized with both language values in `assets/js/site.js`. Edit custom styling in `assets/css/tailwind-input.css`; never change the generated `site.css` by hand.
