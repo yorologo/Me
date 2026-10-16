@@ -206,10 +206,32 @@ test("print CV keeps essential credentials and contact without duplicating docum
   assert.match(customCss, /@media print/);
   assert.match(customCss, /@page\s*\{/);
   assert.match(customCss, /\.print-contact\s*\{\s*display:\s*block/);
-  assert.match(html, /class="print-contact[^"]*">[^<]+@[^<]+<\/p>/);
+  assert.match(html, /class="print-contact[^"]*">[\s\S]*?href="mailto:esaud@hotmail\.es"/);
+  assert.match(html, /class="print-contact[^"]*">[\s\S]*?href="https:\/\/www\.linkedin\.com\/in\//);
+  assert.match(html, /class="print-contact[^"]*">[\s\S]*?href="https:\/\/yorologo\.com\//);
+  assert.ok(html.indexOf('class="print-contact') < html.indexOf('id="projects"'));
+  assert.match(customCss, /#contact,[\s\S]*?section\[aria-labelledby="about-heading"\]/);
+  assert.match(customCss, /#projects \.grid \{[\s\S]*?grid-template-columns: repeat\(3,/);
+  assert.match(customCss, /#skills \.flex\.flex-wrap > span/);
   assert.match(html, /data-i18n="projectMcpProof"/);
   assert.match(html, /data-i18n="projectDealProof"/);
   assert.match(html, /data-i18n="projectAdProof"/);
   assert.doesNotMatch(html, /data-i18n="summaryBuild"/);
   assert.match(html, /href="https:\/\/cedulaprofesional\.sep\.gob\.mx\//);
+});
+
+
+test("print contact is in the Hero, not repeated at the end", () => {
+  assert.equal([...html.matchAll(/class="print-contact\b/g)].length, 1);
+  const hero = html.slice(html.indexOf('id="top"'), html.indexOf("</section>", html.indexOf('id="top"')));
+  const contact = html.slice(html.indexOf('id="contact"'));
+  for (const url of [
+    "mailto:esaud@hotmail.es",
+    "https://www.linkedin.com/in/josu%C3%A9-esaud-g%C3%B3mez-gonz%C3%A1lez-85bb54135/",
+  ]) {
+    assert.ok(hero.includes('href="' + url + '"'), "Hero missing " + url);
+    assert.ok(contact.includes('href="' + url + '"'), "Existing contact action differs");
+  }
+  assert.ok(hero.includes('href="https://yorologo.com/"'));
+  assert.match(customCss, /#skills a\[href="#projects"\] \{ display: none !important; \}/);
 });

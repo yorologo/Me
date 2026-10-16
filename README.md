@@ -53,13 +53,20 @@ The page is the single source of truth for the CV. Use **Print / Save CV**
 (**Imprimir / Guardar CV** in Spanish) to open the browser's native print dialog.
 Choose *Save as PDF* to create a document locally; the site does not upload or
 store that PDF. The print stylesheet hides navigation and actions, includes a
-plain-text contact email, and keeps projects, experience, skills and professional
+compact linked contact line, and keeps projects, experience, skills and professional
 credentials.
 
-The printable portfolio may take several A4 pages. It is not a separately
-curated one-page application CV. No Google Drive folder or private SEP
-constancia PDFs are required for this flow. Visitors can check professional
-registration numbers independently on the SEP's official website.
+The printable version places email, LinkedIn and yorologo.com beside
+the name, gives experience a compact layout, and keeps three projects,
+skills, education, licenses and languages. It omits repeated web-only
+navigation and decorative cards without deleting any site content.
+
+Edge/Chromium verification produced **two A4 pages** in both ES and EN with
+the configured print styles. Actual pagination can vary with browser, print
+scale, margins or paper settings; review the preview before sending.
+It is not a separately tailored single-page application CV. No Google Drive
+folder or private SEP constancia PDFs are required. Visitors can check
+professional registration numbers independently on the SEP's official website.
 
 ## Maintenance
 
