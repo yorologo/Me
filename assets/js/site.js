@@ -11,13 +11,13 @@
       "en": "Experience",
       "es": "Experiencia"
     },
-    "copy-skills": {
-      "en": "Skills",
-      "es": "Habilidades"
-    },
     "copy-education": {
       "en": "Education",
       "es": "Educación"
+    },
+    "copy-skills": {
+      "en": "Skills",
+      "es": "Habilidades"
     },
     "copy-contact": {
       "en": "Contact",
@@ -94,10 +94,6 @@
     "copy-b-s-in-computer-systems-engineering": {
       "en": "B.S. in Computer Systems Engineering",
       "es": "Ingeniería en Sistemas Computacionales"
-    },
-    "copy-activities-programming-workshop-lead": {
-      "en": "Activities: Programming workshop lead.",
-      "es": "Actividades: líder de taller de programación."
     },
     "copy-spanish": {
       "en": "Spanish",
@@ -310,6 +306,38 @@
     "skill-rest-api": {
       "en": "REST API development",
       "es": "Desarrollo de APIs REST"
+    },
+    "education-credentials-heading": {
+      "en": "Education & credentials",
+      "es": "Educación y cédulas profesionales"
+    },
+    "engineering-degree-date": {
+      "en": "Degree awarded: 2024",
+      "es": "Titulación: 2024"
+    },
+    "technical-qualification": {
+      "en": "Computer Equipment Support and Maintenance Technician",
+      "es": "Técnico en Soporte y Mantenimiento de Equipo de Cómputo"
+    },
+    "technical-qualification-date": {
+      "en": "Qualification awarded: 2016",
+      "es": "Titulación: 2016"
+    },
+    "professional-license-label": {
+      "en": "Professional license",
+      "es": "Cédula profesional"
+    },
+    "professional-records-note": {
+      "en": "Professional registration numbers can be checked in the SEP's official public registry.",
+      "es": "Puedes consultar los números de cédula en el registro público oficial de la SEP."
+    },
+    "sep-registry-link": {
+      "en": "Consult SEP professional registry",
+      "es": "Consultar registro profesional de la SEP"
+    },
+    "sep-registry-aria": {
+      "en": "Open the official SEP professional registry in a new tab",
+      "es": "Abrir el registro profesional oficial de la SEP en otra pestaña"
     }
   };
 

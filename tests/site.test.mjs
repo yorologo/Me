@@ -150,3 +150,25 @@ test("featured projects and skill areas match the selected portfolio", () => {
   ]));
   assert.match(accessible.get("aria-open-adfilter-on-github-in-a-new-tab"), /AdFilter/);
 });
+
+test("professional credentials use official registry links and omit source documents", () => {
+  assert.match(html, /15899411/);
+  assert.match(html, /10299502/);
+  assert.match(html, /https:\/\/cedulaprofesional\.sep\.gob\.mx\//);
+  assert.doesNotMatch(html, /\.pdf(?:\?|")/i);
+  assert.doesNotMatch(html, /Folio:|Firma electronica|Sello digital/);
+  assert.ok(html.indexOf('id="education"') > html.indexOf('id="skills"'));
+  const es = loadSite("es-MX");
+  const pairs = new Map(es.text.map((node) => [
+    node.getAttribute("data-i18n"), node.textContent,
+  ]));
+  assert.equal(pairs.get("education-credentials-heading"), "Educación y cédulas profesionales");
+  assert.equal(pairs.get("professional-license-label"), "Cédula profesional");
+  assert.equal(pairs.get("engineering-degree-date"), "Titulación: 2024");
+  assert.equal(pairs.get("technical-qualification-date"), "Titulación: 2016");
+  assert.match(pairs.get("sep-registry-link"), /SEP/);
+  const officialLink = new Map(es.aria.map((node) => [
+    node.getAttribute("data-i18n-aria"), node.getAttribute("aria-label"),
+  ]));
+  assert.match(officialLink.get("sep-registry-aria"), /SEP/);
+});
